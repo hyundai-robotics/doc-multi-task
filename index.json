@@ -1,0 +1,107 @@
+﻿[
+	{
+		"link": "README.md",
+		"char_ofs": 0,
+		"byte_ofs": 0
+	},
+	{
+		"link": "1-overview/README.md",
+		"char_ofs": 261,
+		"byte_ofs": 504
+	},
+	{
+		"link": "1-overview/1-1-about-multi-task.md",
+		"char_ofs": 270,
+		"byte_ofs": 519
+	},
+	{
+		"link": "1-overview/1-2-term-explan.md",
+		"char_ofs": 1314,
+		"byte_ofs": 2888
+	},
+	{
+		"link": "2-related-function/README.md",
+		"char_ofs": 2533,
+		"byte_ofs": 4692
+	},
+	{
+		"link": "2-related-function/2-1-command-sentence/README.md",
+		"char_ofs": 2545,
+		"byte_ofs": 4714
+	},
+	{
+		"link": "2-related-function/2-1-command-sentence/1-taskstart.md",
+		"char_ofs": 2556,
+		"byte_ofs": 4733
+	},
+	{
+		"link": "2-related-function/2-1-command-sentence/2-taskwait.md",
+		"char_ofs": 3765,
+		"byte_ofs": 6770
+	},
+	{
+		"link": "2-related-function/2-1-command-sentence/3-tasksync.md",
+		"char_ofs": 4243,
+		"byte_ofs": 7596
+	},
+	{
+		"link": "2-related-function/2-2-monitoring/README.md",
+		"char_ofs": 5986,
+		"byte_ofs": 9973
+	},
+	{
+		"link": "2-related-function/2-2-monitoring/1-multitask-state.md",
+		"char_ofs": 5998,
+		"byte_ofs": 9995
+	},
+	{
+		"link": "2-related-function/2-3-sub-task-create/README.md",
+		"char_ofs": 6142,
+		"byte_ofs": 10282
+	},
+	{
+		"link": "2-related-function/2-3-sub-task-create/1-auto-create.md",
+		"char_ofs": 6158,
+		"byte_ofs": 10314
+	},
+	{
+		"link": "2-related-function/2-3-sub-task-create/2-manual-create.md",
+		"char_ofs": 6262,
+		"byte_ofs": 10553
+	},
+	{
+		"link": "2-related-function/2-4-sub-task-exist/README.md",
+		"char_ofs": 6470,
+		"byte_ofs": 10996
+	},
+	{
+		"link": "2-related-function/2-4-sub-task-exist/1-auto-exist.md",
+		"char_ofs": 6486,
+		"byte_ofs": 11028
+	},
+	{
+		"link": "2-related-function/2-4-sub-task-exist/2-manual-exist.md",
+		"char_ofs": 6546,
+		"byte_ofs": 11165
+	},
+	{
+		"link": "2-related-function/2-5-forward-backward-step.md",
+		"char_ofs": 6824,
+		"byte_ofs": 11787
+	},
+	{
+		"link": "2-related-function/2-6-motor-on.md",
+		"char_ofs": 7229,
+		"byte_ofs": 12492
+	},
+	{
+		"link": "2-related-function/2-7-stop.md",
+		"char_ofs": 7400,
+		"byte_ofs": 12848
+	},
+	{
+		"link": "2-related-function/2-8-motor-on-stop-lamp.md",
+		"char_ofs": 7474,
+		"byte_ofs": 13017
+	}
+]
