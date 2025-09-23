@@ -55,7 +55,7 @@ Hi6 제어기는 총 8개의 프로그램(JOB 파일)을 동시에 독립적으�
 
 # 2.1.1 task start
 
-task start 명령문은 서브태스크를 생성, 서브태스크에 특정 job 프로그램을 할당, 서브태스크 프로그램을 기동하는 역할을 수행합니다. task start는 서브태스크를 생성할 때 이용합니다.
+task start 명령문은 서브태스크를 생성, 서브태스크에 특정 job 프로그램을 할당, 서브태스크의 프로그램을 기동하는 역할을 수행합니다.
 
 task start 명령어는 『**명령입력**』→『**기타**』→『**task**』 순서대로 선택해서 입력을 할 수 있습니다.
 
@@ -63,11 +63,43 @@ task start 명령어는 『**명령입력**』→『**기타**』→『**task**�
 task start,sub=<서브태스크 번호>,job=<프로그램 번호>
 ```
 
-|    **항목**    | 　　　　　　　　　　**내용**                                                   |
-| :----------: | ------------------------------------------------------------------ |
-| **서브태스크 번호** | 생성할 서브태스크 번호를 지정(1\~7)                                             |
-|  **프로그램 번호** | 생성된 서브태스크에서 실행할 프로그램을 지정(1\~9999)                                  |
-|   **사용 예시**  | <p>task start,sub=1,job=11</p><p>(서브 태스크 1에 0011.job 를 할당하여 수행)</p> |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">항목</th>
+      <th style="text-align:left">내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        서브태스크 번호
+      </td>
+      <td style="text-align:left">
+        생성할 서브태스크 번호를 지정(0 ~ 7) <br>
+        (0으로 지정하면 미사용중인 태스크중 하나를 자동으로 선정하고 이 태스크를 사용)  
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> 
+        프로그램 번호
+      </td>
+      <td style="text-align:left">
+        생성된 서브태스크에서 실행할 프로그램을 지정(1 ~ 9999)
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> 
+        사용 예시
+      </td>
+      <td style="text-align:left">
+        task start,sub=1,job=11 (서브 태스크 1에 0011.job 를 할당하여 실행) <br>
+        task start,sub=0,job=11 (서브 태스크를 자동으로 선정하여 0011.job 를 실행)
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 
 ![그림 2 1 task start 명령어 사용 예시](<../../_assets/image_5.png>)
 
@@ -89,14 +121,45 @@ task start를 이용하여 생성하고자 하는 서브태스크가 이미 생�
 task wait 명령문은 서브태스크의 소멸을 대기하는 역할을 수행합니다. 일반적으로 서브태스크 소멸은 해당 서브태스크 프로그램의 end 명령문 실행에 의해 자동으로 처리됩니다. 작업을 수행 중에 다른 서브태스크의 완료를 대기하였다가 다음 동작을 수행할 때 이용합니다.
 
 ```
-task wait,sub=<서브태스크 번호>
+task wait,sub=<서브태스크 번호>,job=<프로그램 번호>
 ```
 
-|    **항목**    | 　　　　　　　　　　**내용**                                  |
-| :----------: | ------------------------------------------------- |
-| **서브태스크 번호** | 소멸을 대기하는 서브태스크 번호를 지정(1\~7)                       |
-|   **사용 예시**  | <p>task wait,sub=1</p><p>(서브태스크 1의 소멸을 대기합니다.)</p> |
-# 2.1.3 task sync
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">항목</th>
+      <th style="text-align:left">내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        서브태스크 번호
+      </td>
+      <td style="text-align:left">
+        소멸을 대기하는 서브태스크 번호를 지정(0 ~ 7) <br>
+        (0으로 지정하면 기동중인 프로그램 번호에 해당하는  태스크를 찾아 그 태스크의 소멸을 대기)  
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> 
+        프로그램 번호
+      </td>
+      <td style="text-align:left">
+        서브태스크에서 번호가 0으로 지정된 경우에 사용. 실행중인 프로그램을 지정(1 ~ 9999)
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> 
+        사용 예시
+      </td>
+      <td style="text-align:left">
+        task wait,sub=1 (서브태스크 1의 소멸을 대기) <br>
+        task wait,sub=0,job=11 (프로그램 11이 기동중인 태스크의 소멸을 대기)
+      </td>
+    </tr>
+  </tbody>
+</table># 2.1.3 task sync
 
 task sync 명령문은 태스크들 사이의 동기를 맞추는 역할을 수행합니다. 일반적으로 2개 이상의 로봇이 협조 작업을 위해서는 동기가 필수적인데, 이 경우 태스크간 동기 시작 시점을 맞출 때 편리하게 사용할 수 있습니다. 메인태스크와 서브태스크가 작업을 수행하다가 특정 지점에서 동시에 작업을 시작하고자 할 때 유용하게 이용할 수 있습니다.
 
@@ -115,26 +178,88 @@ task sync,id=<식별자>,no=<동일 id의 실행 갯수>
 task stop 명령문은 서브태스크의 실행을 강제로 정지하는 역할을 수행합니다. 
 
 ```
-task stop,sub=<서브태스크 번호>
+task stop,sub=<서브태스크 번호>,job=<프로그램 번호>
 ```
 
-
-|    **항목**    | 　　　　　　　　　　**내용**                                  |
-| :----------: | ------------------------------------------------- |
-| **서브태스크 번호** | 정지를 원하는 서브태스크 번호를 지정(1\~7)                       |
-|   **사용 예시**  | <p>task stop,sub=1</p><p>(서브태스크 1의 실행을 정지합니다.)</p> |
-# 2.1.5 task reset
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">항목</th>
+      <th style="text-align:left">내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        서브태스크 번호
+      </td>
+      <td style="text-align:left">
+        정지를 원하는 서브태스크 번호를 지정(0 ~ 7) <br>
+        (0으로 지정하면 기동중인 프로그램 번호에 해당하는  태스크를 찾아 그 태스크를 정지)  
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> 
+        프로그램 번호
+      </td>
+      <td style="text-align:left">
+        서브태스크에서 번호가 0으로 지정된 경우에 사용. 실행중인 프로그램을 지정(1 ~ 9999)
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> 
+        사용 예시
+      </td>
+      <td style="text-align:left">
+        task stop,sub=1 (서브태스크 1의 실행을 정지) <br>
+        task stop,sub=0,job=11 (프로그램 11이 기동중인 태스크의 실행을 정지)
+      </td>
+    </tr>
+  </tbody>
+</table># 2.1.5 task reset
 
 task reset 명령문은 서브태스크를 강제로 소멸하는 역할을 수행합니다. 일반적으로 서브태스크 소멸은 해당 서브태스크 프로그램의 end 명령문 실행에 의해 자동으로 처리됩니다. 
 
 ```
-task reset,sub=<서브태스크 번호>
+task reset,sub=<서브태스크 번호>,job=<프로그램 번호>
 ```
 
-|    **항목**    | 　　　　　　　　　　**내용**                                  |
-| :----------: | ------------------------------------------------- |
-| **서브태스크 번호** | 소멸을 원하는 서브태스크 번호를 지정(1\~7)                       |
-|   **사용 예시**  | <p>task reset,sub=1</p><p>(서브태스크 1을 소멸합니다.)</p> |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">항목</th>
+      <th style="text-align:left">내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        서브태스크 번호
+      </td>
+      <td style="text-align:left">
+        소멸을 원하는 서브태스크 번호를 지정(0 ~ 7) <br>
+        (0으로 지정하면 기동중인 프로그램 번호에 해당하는  태스크를 찾아 그 태스크를 소멸)  
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> 
+        프로그램 번호
+      </td>
+      <td style="text-align:left">
+        서브태스크에서 번호가 0으로 지정된 경우에 사용. 실행중인 프로그램을 지정(1 ~ 9999)
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> 
+        사용 예시
+      </td>
+      <td style="text-align:left">
+        task reset,sub=1 (서브태스크 1을 소멸) <br>
+        task reset,sub=0,job=11 (프로그램 11이 기동중인 태스크를 소멸)
+      </td>
+    </tr>
+  </tbody>
+</table>
 # 2.1.6 axisctrl
 
 axisctrl 명령문은 move 명령문 실행에 의해 각축의 위치를 이동할 때, 해당 부가축에 대해서 로봇과 함께 목표위치로 이동할 지 여부를 지정하는 역할을 수행합니다.  

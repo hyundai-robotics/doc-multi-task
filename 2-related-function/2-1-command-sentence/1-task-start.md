@@ -1,6 +1,6 @@
 ﻿# 2.1.1 task start
 
-task start 명령문은 서브태스크를 생성, 서브태스크에 특정 job 프로그램을 할당, 서브태스크 프로그램을 기동하는 역할을 수행합니다. task start는 서브태스크를 생성할 때 이용합니다.
+task start 명령문은 서브태스크를 생성, 서브태스크에 특정 job 프로그램을 할당, 서브태스크의 프로그램을 기동하는 역할을 수행합니다.
 
 task start 명령어는 『**명령입력**』→『**기타**』→『**task**』 순서대로 선택해서 입력을 할 수 있습니다.
 
@@ -8,11 +8,43 @@ task start 명령어는 『**명령입력**』→『**기타**』→『**task**�
 task start,sub=<서브태스크 번호>,job=<프로그램 번호>
 ```
 
-|    **항목**    | 　　　　　　　　　　**내용**                                                   |
-| :----------: | ------------------------------------------------------------------ |
-| **서브태스크 번호** | 생성할 서브태스크 번호를 지정(1\~7)                                             |
-|  **프로그램 번호** | 생성된 서브태스크에서 실행할 프로그램을 지정(1\~9999)                                  |
-|   **사용 예시**  | <p>task start,sub=1,job=11</p><p>(서브 태스크 1에 0011.job 를 할당하여 수행)</p> |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">항목</th>
+      <th style="text-align:left">내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        서브태스크 번호
+      </td>
+      <td style="text-align:left">
+        생성할 서브태스크 번호를 지정(0 ~ 7) <br>
+        (0으로 지정하면 미사용중인 태스크중 하나를 자동으로 선정하고 이 태스크를 사용)  
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> 
+        프로그램 번호
+      </td>
+      <td style="text-align:left">
+        생성된 서브태스크에서 실행할 프로그램을 지정(1 ~ 9999)
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> 
+        사용 예시
+      </td>
+      <td style="text-align:left">
+        task start,sub=1,job=11 (서브 태스크 1에 0011.job 를 할당하여 실행) <br>
+        task start,sub=0,job=11 (서브 태스크를 자동으로 선정하여 0011.job 를 실행)
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 
 ![그림 2 1 task start 명령어 사용 예시](<../../_assets/image_5.png>)
 

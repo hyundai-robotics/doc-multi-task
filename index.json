@@ -36,87 +36,87 @@
 	},
 	{
 		"link": "2-related-function/2-1-command-sentence/2-task-wait.md",
-		"char_ofs": 3793,
-		"byte_ofs": 6848
+		"char_ofs": 4152,
+		"byte_ofs": 7289
 	},
 	{
 		"link": "2-related-function/2-1-command-sentence/3-task-sync.md",
-		"char_ofs": 4275,
-		"byte_ofs": 7681
+		"char_ofs": 5191,
+		"byte_ofs": 8880
 	},
 	{
 		"link": "2-related-function/2-1-command-sentence/4-task-stop.md",
-		"char_ofs": 6024,
-		"byte_ofs": 10067
+		"char_ofs": 6940,
+		"byte_ofs": 11266
 	},
 	{
 		"link": "2-related-function/2-1-command-sentence/5-task-reset.md",
-		"char_ofs": 6402,
-		"byte_ofs": 10641
+		"char_ofs": 7870,
+		"byte_ofs": 12586
 	},
 	{
 		"link": "2-related-function/2-1-command-sentence/6-axisctrl.md",
-		"char_ofs": 6833,
-		"byte_ofs": 11339
+		"char_ofs": 8852,
+		"byte_ofs": 14025
 	},
 	{
 		"link": "2-related-function/2-2-monitoring/README.md",
-		"char_ofs": 8346,
-		"byte_ofs": 13557
+		"char_ofs": 10365,
+		"byte_ofs": 16243
 	},
 	{
 		"link": "2-related-function/2-2-monitoring/1-multitask-state.md",
-		"char_ofs": 8358,
-		"byte_ofs": 13582
+		"char_ofs": 10377,
+		"byte_ofs": 16268
 	},
 	{
 		"link": "2-related-function/2-3-sub-task-create/README.md",
-		"char_ofs": 8502,
-		"byte_ofs": 13872
+		"char_ofs": 10521,
+		"byte_ofs": 16558
 	},
 	{
 		"link": "2-related-function/2-3-sub-task-create/1-auto-create.md",
-		"char_ofs": 8518,
-		"byte_ofs": 13907
+		"char_ofs": 10537,
+		"byte_ofs": 16593
 	},
 	{
 		"link": "2-related-function/2-3-sub-task-create/2-manual-create.md",
-		"char_ofs": 8623,
-		"byte_ofs": 14150
+		"char_ofs": 10642,
+		"byte_ofs": 16836
 	},
 	{
 		"link": "2-related-function/2-4-sub-task-exist/README.md",
-		"char_ofs": 8831,
-		"byte_ofs": 14596
+		"char_ofs": 10850,
+		"byte_ofs": 17282
 	},
 	{
 		"link": "2-related-function/2-4-sub-task-exist/1-auto-exist.md",
-		"char_ofs": 8847,
-		"byte_ofs": 14631
+		"char_ofs": 10866,
+		"byte_ofs": 17317
 	},
 	{
 		"link": "2-related-function/2-4-sub-task-exist/2-manual-exist.md",
-		"char_ofs": 8907,
-		"byte_ofs": 14771
+		"char_ofs": 10926,
+		"byte_ofs": 17457
 	},
 	{
 		"link": "2-related-function/2-5-forward-backward-step.md",
-		"char_ofs": 9278,
-		"byte_ofs": 15583
+		"char_ofs": 11297,
+		"byte_ofs": 18269
 	},
 	{
 		"link": "2-related-function/2-6-motor-on.md",
-		"char_ofs": 9683,
-		"byte_ofs": 16291
+		"char_ofs": 11702,
+		"byte_ofs": 18977
 	},
 	{
 		"link": "2-related-function/2-7-stop.md",
-		"char_ofs": 9854,
-		"byte_ofs": 16650
+		"char_ofs": 11873,
+		"byte_ofs": 19336
 	},
 	{
 		"link": "2-related-function/2-8-motor-on-stop-lamp.md",
-		"char_ofs": 9976,
-		"byte_ofs": 16922
+		"char_ofs": 11995,
+		"byte_ofs": 19608
 	}
 ]
