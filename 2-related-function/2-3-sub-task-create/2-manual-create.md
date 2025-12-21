@@ -1,7 +1,7 @@
-﻿# 2.3.2 수동 생성
+# 2.3.2 Manual creation
 
-사용자가 TP 조작을 통해서 원하는 서브태스크에 프로그램을 할당하고 실행시키는 방법입니다. 수동 생성 절차는 다음과 같습니다.
+This method allows the user to assign and start a program on a desired sub task via teach pendant (TP) operations. The manual creation procedure is as follows:
 
-『**창선택**』 → 『**멀티태스킹**』창에서 원하는 서브태스크로 커서를 이동하여 『**편집**』 버튼으로  프로그램 선택
+From **Window Select** → **Multitasking**, move the cursor to the desired sub task and choose **Edit** to select a program.
 
-![그림 2‑5 서브태스크 수동생성](<../../_assets/image_4.png>)
+![Figure 2‑5 Manual sub task creation](<../../_assets/image_4.png>)

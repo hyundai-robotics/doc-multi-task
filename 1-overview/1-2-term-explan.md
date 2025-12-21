@@ -1,11 +1,14 @@
-﻿# 1.2 용어 설명
+# 1.2 Terminology
 
-본 설명서에서 사용하는 용어에 대한 설명은 아래의 표와 같습니다.
+The terms used in this manual are defined in the table below.
 
-<mark style="color:green;">표 1‑1 멀티태스크 용어 설명</mark>
+<mark style="color:green;">Table 1‑1 Multitask terminology</mark>
 
-| 　　　　　　　　용어                                                              | 　　　　　　　　　　설명                                                                                                                                     |
-| ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 프로그램 (job 파일)                                                           | <p>- 제어기의 저장메모리에 저장되어 있는 작업 프로그램<br>(예시: 0001.job, 0002.job, 1001.job 등 제어기에 저장된 job 파일을 지칭합니다.)</p>                                             |
-| <p>메인태스크</p><p>(Main task)</p><p>서브태스크 1 ~ 7</p><p>(Sub task 1 ~ 7)</p> | <p>- 작업 프로그램을 로드해서 실행할 수 있는 로봇제어기의 작업프로그램 실행기</p><p>- 총 8개의 태스크가 있고 각 태스크는 한번에 1개의 프로그램만 로드와 실행을 할 수 있습니다.</p>                                   |
-| <p>메인태스크 프로그램</p><p>서브태스크 프로그램</p>                                      | <p>- 태스크에 할당된 특정 작업 프로그램을 지칭합니다.<br>(예시: 메인태스크에서 0001.job을 로드한 경우 메인태스크 프로그램은 0001.job 입니다.)</p><p>- 프로그램은 메인태스크 또는 서브태스크로 할당되어야만 실행이 가능합니다.</p> |
+| Term | Description |
+| --- | --- |
+| Program (job file) | - A job program stored in the controller's non-volatile memory (e.g., 0001.job, 0002.job, 1001.job, etc.). |
+| Main task (Main task) / Sub task 1 ~ 7 (Sub task 1 ~ 7) | - The robot controller's program executor that can load and run job programs.
+- There are 8 tasks in total; each task can load and run only one program at a time. |
+| Main task program / Sub task program | - The specific job program assigned to a task.
+- (Example: If the main task loads 0001.job, the main task program is 0001.job.)
+- A program can be executed only when it is assigned to either the main task or a sub task. |

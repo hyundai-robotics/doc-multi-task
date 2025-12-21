@@ -1,5 +1,5 @@
-﻿# 2.2.1 멀티태스킹 상태
+# 2.2.1 Multitask state
 
-『**창선택**』 → 『**멀티태스킹**』에서 각각의 태스크에 할당된 프로그램 번호를 포함하여 각종 상태를 확인할 수 있습니다.
+From **Window Select** → **Multitasking**, you can view various statuses including the program number assigned to each task.
 
-![ 그림 2‑4 멀티태스킹 모니터링 창](<../../_assets/image_6.png>)
+![Figure 2‑4 Multitasking monitoring window](<../../_assets/image_6.png>)

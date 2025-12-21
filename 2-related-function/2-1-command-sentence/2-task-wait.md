@@ -1,44 +1,30 @@
-﻿# 2.1.2 task wait
+# 2.1.2 task wait
 
-task wait 명령문은 서브태스크의 소멸을 대기하는 역할을 수행합니다. 일반적으로 서브태스크 소멸은 해당 서브태스크 프로그램의 end 명령문 실행에 의해 자동으로 처리됩니다. 작업을 수행 중에 다른 서브태스크의 완료를 대기하였다가 다음 동작을 수행할 때 이용합니다.
+The `task wait` statement waits for a sub task to be destroyed. Normally a sub task is destroyed automatically when an `end` statement in that sub task program is executed. Use this when you want to wait for another sub task to finish before continuing work.
 
 ```
-task wait,sub=<서브태스크 번호>,job=<프로그램 번호>
+task wait,sub=<sub_task_number>,job=<program_number>
 ```
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">항목</th>
-      <th style="text-align:left">내용</th>
+      <th style="text-align:left">Item</th>
+      <th style="text-align:left">Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left">
-        서브태스크 번호
-      </td>
-      <td style="text-align:left">
-        소멸을 대기하는 서브태스크 번호를 지정(0 ~ 7) <br>
-        (0으로 지정하면 기동중인 프로그램 번호에 해당하는  태스크를 찾아 그 태스크의 소멸을 대기)  
-      </td>
+      <td style="text-align:left">Sub task number</td>
+      <td style="text-align:left">Specify the sub task number to wait for (0 ~ 7).<br>(If set to 0, the controller finds the task running the specified program number and waits for that task to be destroyed.)</td>
     </tr>
     <tr>
-      <td style="text-align:left"> 
-        프로그램 번호
-      </td>
-      <td style="text-align:left">
-        서브태스크에서 번호가 0으로 지정된 경우에 사용. 실행중인 프로그램을 지정(1 ~ 9999)
-      </td>
+      <td style="text-align:left">Program number</td>
+      <td style="text-align:left">Used when the sub task number is specified as 0. Specifies the running program (1 ~ 9999).</td>
     </tr>
     <tr>
-      <td style="text-align:left"> 
-        사용 예시
-      </td>
-      <td style="text-align:left">
-        task wait,sub=1 (서브태스크 1의 소멸을 대기) <br>
-        task wait,sub=0,job=11 (프로그램 11이 기동중인 태스크의 소멸을 대기)
-      </td>
+      <td style="text-align:left">Usage examples</td>
+      <td style="text-align:left">task wait,sub=1 (wait for sub task 1 to be destroyed)<br>task wait,sub=0,job=11 (wait for the task running program 11 to be destroyed)</td>
     </tr>
   </tbody>
 </table>

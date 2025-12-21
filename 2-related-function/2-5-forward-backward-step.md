@@ -1,8 +1,8 @@
-﻿# 2.5 스텝 전/후진
+# 2.5 Step forward/backward
 
-생성된 모든 태스크를 동시에 스텝 전/후진을 하거나 현재 선택된 태스크만 스텝 전/후진을 하고자 할 때에는 아래 표에 정리된 키를 이용하면 됩니다. 스텝 전/후진 키를 선택할 때 메인태스크와 서브태스크의 스텝 동작은 아래 표와 같습니다.
+To step forward or backward all created tasks simultaneously, or only the currently selected task, use the keys summarized in the table below. The step behavior for the main task and sub tasks is as follows.
 
-|               **동작**               | 　　　　　　　　　　**내용**       |
-| :--------------------------------: | ---------------------- |
-|       \[**FWD**]/\[**BWD**]키       | 생성된 모든 태스크 동시에 전/후진 실행 |
-| \[**CTRL**]+\[**FWD**]/\[**BWD**]키 | 현재 선택된 태스크만 전/후진 실행    |
+| **Action** | **Description** |
+| :--------: | --------------- |
+| [**FWD**]/[**BWD**] key | Step forward/backward for all created tasks simultaneously |
+| [**CTRL**]+[**FWD**]/[**BWD**] key | Step forward/backward for the currently selected task only |

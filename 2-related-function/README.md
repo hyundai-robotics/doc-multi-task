@@ -1,2 +1,1 @@
-﻿# 2. 관련 기능
-
+# 2. Related functions

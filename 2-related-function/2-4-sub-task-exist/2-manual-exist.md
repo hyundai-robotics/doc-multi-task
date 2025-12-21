@@ -1,16 +1,13 @@
-﻿# 2.4.2 수동 소멸
+# 2.4.2 Manual destruction
 
-서브태스크를 수동으로 소멸시키고 클리어하는 것은 모니터링 창에서 프로그램 번호를 0으로 선택하는 방식으로 할 수 있습니다. 절차는 다음과 같습니다.
+You can manually destroy and clear a sub task by selecting the program number `0` in the monitoring window. Procedure:
 
-『**창선택**』 → 『**멀티태스크**』에서 원하는 서브태스크로 커서를 이동하여 『**편집**』 버튼으로 프로그램 번호를 ‘**0**’선택
+From **Window Select** → **Multitasking**, move the cursor to the desired sub task and choose **Edit**, then set the program number to `0`.
 
-![그림 2 6 멀티태스크 수동 소멸](../../_assets/image.png)
+![Figure 2‑6 Manual sub task destruction](../../_assets/image.png)
 
-이외에도 task reset을 실행하면 해댱 서브테스크가 소멸됩니다. 
-<br/>
-<br/>
-하기의 조작시에는 모든 서브태스크가 소멸됩니다.
-- 수동모드에서 메인태스크의 프로그램을 다시 선택할 때
-- 수동모드에서 ‘*R0 : 태스크 리셋*’을 실행할 때
+Additionally, executing `task reset` will destroy the associated sub task.
 
-
+The following operations will destroy all sub tasks:
+- Re-selecting the main task program in MANUAL mode
+- Executing `*R0 : Task Reset*` in MANUAL mode

@@ -1,3 +1,3 @@
-﻿# 2.3.1 자동 생성
+# 2.3.1 Automatic creation
 
-메인태스크 프로그램 또는 서브태스크 프로그램 내에서 task start 명령문 실행에 의해 원하는 서브태스크에 프로그램이 할당되어 서브태스크가 자동 생성됩니다.
+When a `task start` statement is executed within a main task program or a sub task program, the specified program is assigned to the desired sub task and the sub task is created automatically.

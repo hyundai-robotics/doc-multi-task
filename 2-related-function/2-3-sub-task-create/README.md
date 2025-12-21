@@ -1,2 +1,1 @@
-﻿# 2.3 서브태스크 생성
-
+# 2.3 Sub-task creation

@@ -1,2 +1,1 @@
-﻿# 2.4 서브태스크 소멸
-
+# 2.4 Sub-task destruction

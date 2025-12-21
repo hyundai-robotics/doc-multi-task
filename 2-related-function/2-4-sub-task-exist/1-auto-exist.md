@@ -1,3 +1,3 @@
-﻿# 2.4.1 자동 소멸
+# 2.4.1 Automatic destruction
 
-서브태스크의 프로그램에서 end 명령문이 실행되면 서브태스크는 자동 소멸됩니다.
+When an `end` statement is executed in a sub task program, the sub task is automatically destroyed.

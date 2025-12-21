@@ -1,2 +1,1 @@
-﻿# 2.1 명령문
-
+# 2.1 Command statements

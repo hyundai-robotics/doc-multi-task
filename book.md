@@ -1,348 +1,282 @@
-﻿# ${cont_model} 로봇제어기 기능설명서 - 멀티태스킹
+﻿# ${cont_model} Robot Controller Manual - Multi-tasking
 
 {% hint style="warning" %}
-본 제품 설명서에서 제공되는 정보는 HD현대로보틱스의 자산입니다.
+The information contained in this product manual is the property of HD Hyundai Robotics.
 
-HD현대로보틱스의 서면에 의한 동의 없이 전부 또는 일부를 무단 전재 및 재배포할 수 없으며, 제3자에게 제공되거나 다른 목적에 사용할 수 없습니다.
+No part of this manual may be reproduced, redistributed, or provided to any third party, nor used for any purpose, without the prior written consent of HD Hyundai Robotics.
 
-
-
-본 설명서는 사전 예고 없이 변경될 수 있습니다.
-  
-
+This manual may be changed without prior notice.
 
 **Copyright ⓒ 2023 by HD Hyundai Robotics**
 {% endhint %}
-# 1. 개요
+# 1. Overview
+# 1.1 About the multi-tasking feature
 
-# 1.1 멀티태스킹 기능에 대하여
+The ${cont_model} controller can run up to 8 programs (JOB files) simultaneously and independently. This independent operation mode is referred to as the **multi-tasking feature**.
 
-${cont_model} 제어기는 총 8개의 프로그램(JOB 파일)을 동시에 독립적으로 실행할 수 있으며, 이러한 독립된 동작방식에 의해 수행되는 멀티태스킹 제어를 “**멀티태스킹 기능**”이라 합니다.
+With multi-tasking, you can execute a robot control program while simultaneously running programs that control other devices. Robot control and other device control can operate independently, and when needed they can work in a synchronized state to cooperate. This enables performing complex and sophisticated application tasks.
 
-멀티태스크 기능을 이용하면 로봇 제어 프로그램을 실행하면서 동시에 다른 디바이스를 제어하는 프로그램을 실행할 수 있습니다. 이때 로봇 제어와 다른 디바이스 제어를 서로 독립적으로 수행할 수 있고 필요한 경우에는 로봇과 다른 디바이스가 서로 동기된 상태로 협업작업을 할 수도 있어 복잡하고 어려운 응용작업을 수행할 수 있는 이점이 있습니다.
+Figure 1-1 below shows a single-tasking structure. In this case only one task exists, so it is not possible to independently run two or more programs at the same time. Compared to the multi-tasking structure described later, you can think of this as having only the main task and no sub tasks.
 
-아래의 그림 1-1은 싱글태스킹 구조입니다. 여기서는 1개의 태스크만 존재하여 2개 이상의 프로그램을 동시에 독립적으로 실행 할 수 없습니다. 이어서 설명할 멀티태스킹 구조와 비교해 보면 메인태스크만 존재하고 서브태스크는 없다고 생각하면 됩니다.
+![Figure 1-1 Single-tasking structure](<../_assets/image_1.png>)
 
-![그림 1-1 싱글태스킹 구조](<../_assets/image_1.png>)
+Figure 1‑2 below shows a multi-tasking structure. Because up to 8 tasks can run concurrently, one program (JOB file) can be assigned per task, allowing up to 8 programs (JOB files) to run independently and simultaneously. Running 8 tasks concurrently allows independent control of multiple devices.
 
-아래의 그림 1‑2은 멀티태스킹 구조입니다. 최대 8개의 태스크가 동시 실행 가능하기 때문에 각 태스크 당 1개의 프로그램 (JOB 파일)을 할당하여 최대 8개의 프로그램(JOB 파일)을 독립적으로 동시에 실행할 수 있습니다. 8개의 태스크를 동시에 수행함으로써 다수의 디바이스 제어를 독립적으로 수행할 수 있습니다.
+![Figure 1‑2 Multi-tasking structure](<../_assets/image_2.png>)
 
-![그림 1‑2 멀티태스킹 구조](<../_assets/image_2.png>)
+The names of the eight tasks that execute programs are as follows:
 
-프로그램을 실행하는 8개의 태스크들의 명칭은 아래와 같습니다.
+* Main task
+* Sub task 1 ~ 7
 
-* 메인태스크
-* 서브태스크 1 \~ 7
+The main task is always created and present by default to execute JOB programs. Sub tasks can be created and destroyed as needed. Figure 1‑3 below shows the sub task creation structure. Sub tasks are created automatically when the program executes a `task start` statement. Sub tasks are destroyed automatically when a `task reset` statement is executed or when an `end` statement is executed in each sub task program.
 
-메인태스크는 JOB 프로그램을 수행하기 위해서 항상 기본으로 생성되고 존재하며, 서브태스크는 필요에 따라 생성과 소멸이 가능합니다. 아래의 그림 1-3은 서브태스크 생성 구조입니다. 서브태스크의 생성은 프로그램에서 task start 명령문을 실행할 때 자동으로 이루어집니다. 서브태스크의 소멸은 task reset 명령문이 실행될 때나 각각의 서브태스크 프로그램에서 end 명령문이 실행될 때 자동으로 이루어집니다.
+![Figure 1‑3 Sub task creation](<../_assets/image_3.png>)
+# 1.2 Terminology
 
-![그림 1‑3 서브태스크 생성
-](<../_assets/image_3.png>)
-# 1.2 용어 설명
+The terms used in this manual are defined in the table below.
 
-본 설명서에서 사용하는 용어에 대한 설명은 아래의 표와 같습니다.
+<mark style="color:green;">Table 1‑1 Multitask terminology</mark>
 
-<mark style="color:green;">표 1‑1 멀티태스크 용어 설명</mark>
-
-| 　　　　　　　　용어                                                              | 　　　　　　　　　　설명                                                                                                                                     |
-| ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 프로그램 (job 파일)                                                           | <p>- 제어기의 저장메모리에 저장되어 있는 작업 프로그램<br>(예시: 0001.job, 0002.job, 1001.job 등 제어기에 저장된 job 파일을 지칭합니다.)</p>                                             |
-| <p>메인태스크</p><p>(Main task)</p><p>서브태스크 1 ~ 7</p><p>(Sub task 1 ~ 7)</p> | <p>- 작업 프로그램을 로드해서 실행할 수 있는 로봇제어기의 작업프로그램 실행기</p><p>- 총 8개의 태스크가 있고 각 태스크는 한번에 1개의 프로그램만 로드와 실행을 할 수 있습니다.</p>                                   |
-| <p>메인태스크 프로그램</p><p>서브태스크 프로그램</p>                                      | <p>- 태스크에 할당된 특정 작업 프로그램을 지칭합니다.<br>(예시: 메인태스크에서 0001.job을 로드한 경우 메인태스크 프로그램은 0001.job 입니다.)</p><p>- 프로그램은 메인태스크 또는 서브태스크로 할당되어야만 실행이 가능합니다.</p> |
-# 2. 관련 기능
-
-# 2.1 명령문
-
+| Term | Description |
+| --- | --- |
+| Program (job file) | - A job program stored in the controller's non-volatile memory (e.g., 0001.job, 0002.job, 1001.job, etc.). |
+| Main task (Main task) / Sub task 1 ~ 7 (Sub task 1 ~ 7) | - The robot controller's program executor that can load and run job programs.
+- There are 8 tasks in total; each task can load and run only one program at a time. |
+| Main task program / Sub task program | - The specific job program assigned to a task.
+- (Example: If the main task loads 0001.job, the main task program is 0001.job.)
+- A program can be executed only when it is assigned to either the main task or a sub task. |
+# 2. Related functions
+# 2.1 Command statements
 # 2.1.1 task start
 
-task start 명령문은 서브태스크를 생성, 서브태스크에 특정 job 프로그램을 할당, 서브태스크의 프로그램을 기동하는 역할을 수행합니다.
+The `task start` statement creates a sub task, assigns a specific job program to it, and starts the sub task program.
 
-task start 명령어는 『**명령입력**』→『**기타**』→『**task**』 순서대로 선택해서 입력을 할 수 있습니다.
+The `task start` statement can be entered from **Command Input** → **Other** → **Task**.
 
 ```
-task start,sub=<서브태스크 번호>,job=<프로그램 번호>
+task start,sub=<sub_task_number>,job=<program_number>
 ```
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">항목</th>
-      <th style="text-align:left">내용</th>
+      <th style="text-align:left">Item</th>
+      <th style="text-align:left">Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left">
-        서브태스크 번호
-      </td>
-      <td style="text-align:left">
-        생성할 서브태스크 번호를 지정(0 ~ 7) <br>
-        (0으로 지정하면 미사용중인 태스크중 하나를 자동으로 선정하고 이 태스크를 사용)  
-      </td>
+      <td style="text-align:left">Sub task number</td>
+      <td style="text-align:left">Specify the sub task number to create (0 ~ 7).<br>(If set to 0, an unused task is selected automatically and used.)</td>
     </tr>
     <tr>
-      <td style="text-align:left"> 
-        프로그램 번호
-      </td>
-      <td style="text-align:left">
-        생성된 서브태스크에서 실행할 프로그램을 지정(1 ~ 9999)
-      </td>
+      <td style="text-align:left">Program number</td>
+      <td style="text-align:left">Specify the program to run in the created sub task (1 ~ 9999).</td>
     </tr>
     <tr>
-      <td style="text-align:left"> 
-        사용 예시
-      </td>
-      <td style="text-align:left">
-        task start,sub=1,job=11 (서브 태스크 1에 0011.job 를 할당하여 실행) <br>
-        task start,sub=0,job=11 (서브 태스크를 자동으로 선정하여 0011.job 를 실행)
-      </td>
+      <td style="text-align:left">Usage examples</td>
+      <td style="text-align:left">task start,sub=1,job=11 (assign and run 0011.job on sub task 1)<br>task start,sub=0,job=11 (automatically select a sub task and run 0011.job)</td>
     </tr>
   </tbody>
 </table>
 
+![Figure 2‑1 Example of using task start](<../../_assets/image_5.png>)
 
-![그림 2 1 task start 명령어 사용 예시](<../../_assets/image_5.png>)
+![Figure 2‑2 Example of sub task creation and wait for termination](<../../_assets/image_7.png>)
 
-![그림 2 2 서브태스크 생성과 종료대기 예시](<../../_assets/image_7.png>)
+Note: The sub task number to be created must be a different sub task number than the calling task's own number. Also, `task start` cannot be applied in certain error conditions described below.
 
-주의할 점으로 생성하고자 하는 서브태스크 번호는 자기 자신의 번호가 아닌 다른 서브태스크 번호이어야 합니다. 이외에도 task start 명령은 아래에서 설명하는 경우에는 오류 상황으로 적용이 불가능하니 주의가 필요합니다.
+If you attempt to create a sub task with `task start` when that sub task is already created and running, assigning another program to that sub task will result in an error. See the example below.
 
-task start를 이용하여 생성하고자 하는 서브태스크가 이미 생성되어 실행중인 경우에 다른 프로그램을 해당 서브태스크에서 생성하면 오류가 발생합니다. 아래의 예시를 참고하시기 바랍니다.
+* <mark style="color:green;">**Error when assigning and starting another program on a running sub task**</mark>
 
-*   <mark style="color:green;">**서브태스크 실행 중 다른 프로그램 할당과 실행 오류**</mark>
-
-    ```
-    task start,sub=1,job=11 # subtask 1 was started
-    task start,sub=1,job=12
-    …
-    ```
+```
+task start,sub=1,job=11 # subtask 1 was started
+task start,sub=1,job=12
+…
+```
 # 2.1.2 task wait
 
-task wait 명령문은 서브태스크의 소멸을 대기하는 역할을 수행합니다. 일반적으로 서브태스크 소멸은 해당 서브태스크 프로그램의 end 명령문 실행에 의해 자동으로 처리됩니다. 작업을 수행 중에 다른 서브태스크의 완료를 대기하였다가 다음 동작을 수행할 때 이용합니다.
+The `task wait` statement waits for a sub task to be destroyed. Normally a sub task is destroyed automatically when an `end` statement in that sub task program is executed. Use this when you want to wait for another sub task to finish before continuing work.
 
 ```
-task wait,sub=<서브태스크 번호>,job=<프로그램 번호>
+task wait,sub=<sub_task_number>,job=<program_number>
 ```
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">항목</th>
-      <th style="text-align:left">내용</th>
+      <th style="text-align:left">Item</th>
+      <th style="text-align:left">Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left">
-        서브태스크 번호
-      </td>
-      <td style="text-align:left">
-        소멸을 대기하는 서브태스크 번호를 지정(0 ~ 7) <br>
-        (0으로 지정하면 기동중인 프로그램 번호에 해당하는  태스크를 찾아 그 태스크의 소멸을 대기)  
-      </td>
+      <td style="text-align:left">Sub task number</td>
+      <td style="text-align:left">Specify the sub task number to wait for (0 ~ 7).<br>(If set to 0, the controller finds the task running the specified program number and waits for that task to be destroyed.)</td>
     </tr>
     <tr>
-      <td style="text-align:left"> 
-        프로그램 번호
-      </td>
-      <td style="text-align:left">
-        서브태스크에서 번호가 0으로 지정된 경우에 사용. 실행중인 프로그램을 지정(1 ~ 9999)
-      </td>
+      <td style="text-align:left">Program number</td>
+      <td style="text-align:left">Used when the sub task number is specified as 0. Specifies the running program (1 ~ 9999).</td>
     </tr>
     <tr>
-      <td style="text-align:left"> 
-        사용 예시
-      </td>
-      <td style="text-align:left">
-        task wait,sub=1 (서브태스크 1의 소멸을 대기) <br>
-        task wait,sub=0,job=11 (프로그램 11이 기동중인 태스크의 소멸을 대기)
-      </td>
+      <td style="text-align:left">Usage examples</td>
+      <td style="text-align:left">task wait,sub=1 (wait for sub task 1 to be destroyed)<br>task wait,sub=0,job=11 (wait for the task running program 11 to be destroyed)</td>
     </tr>
   </tbody>
-</table># 2.1.3 task sync
+</table>
+# 2.1.3 task sync
 
-task sync 명령문은 태스크들 사이의 동기를 맞추는 역할을 수행합니다. 일반적으로 2개 이상의 로봇이 협조 작업을 위해서는 동기가 필수적인데, 이 경우 태스크간 동기 시작 시점을 맞출 때 편리하게 사용할 수 있습니다. 메인태스크와 서브태스크가 작업을 수행하다가 특정 지점에서 동시에 작업을 시작하고자 할 때 유용하게 이용할 수 있습니다.
+The `task sync` statement synchronizes tasks. When two or more robots must cooperate, synchronization is essential; `task sync` is useful to align the start points among tasks. It is handy when the main task and sub tasks need to perform work and then start a step simultaneously at a specific point.
 
 ```
-task sync,id=<식별자>,no=<동일 id의 실행 갯수>
+task sync,id=<identifier>,no=<number_of_tasks_to_sync>
 ```
 
-|     **항목**     | 　　　　　　　　　　**내용**                                                                                                                                                                                                                   |
-| :------------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|     **식별자**    | <p>1~32 로 식별자를 지정</p><p>동기할 지점은 프로그램 내에서 여러 개 설정할 수 있으며 이를 구별하기 위해서 사용합니다.</p>                                                                                                                                                     |
-| **동기할 태스크 개수** | <p>2~8로 동기할 태스크의 개수를 지정</p><p>task sync 명령어가 실행된 태스크 개수와 일치할 때까지 대기합니다.</p>                                                                                                                                                         |
-|    **사용 예시**   | <p># 메인태스크 프로그램</p><p>print ”maintask”</p><p>task start,sub=1,job=11</p><p>…</p><p><mark style="background-color:green;">task sync,id=1,no=2</mark></p><p>print ”sync with subtask 1”</p><p> </p><p>(태스크 id는 1, 동기할 태스크 개수는 2개)</p> |
-|                | <p># 서브 태스크 1 프로그램</p><p>print ”subtask 1”</p><p>…</p><p><mark style="background-color:green;">task sync,id=1,no=2</mark></p><p>print ”sync with maintask”</p><p> </p><p>(태스크 id는 1, 동기할 태스크 개수는 2개)</p>                            |
+| **Item** | **Description** |
+| :------: | --------------- |
+| **Identifier** | Specify an identifier from 1 to 32. Multiple sync points can be set in a program and the identifier is used to distinguish them. |
+| **Number of tasks to sync** | Specify the number of tasks to synchronize (2 ~ 8). The issuing task waits until the number of tasks that executed `task sync` with the same identifier matches this value. |
+| **Usage example** | <p># Main task program</p><p>print "maintask"</p><p>task start,sub=1,job=11</p><p>…</p><p><mark style="background-color:green;">task sync,id=1,no=2</mark></p><p>print "sync with subtask 1"</p><p>(id=1, number of tasks to sync = 2)</p> |
+| | <p># Sub task 1 program</p><p>print "subtask 1"</p><p>…</p><p><mark style="background-color:green;">task sync,id=1,no=2</mark></p><p>print "sync with maintask"</p><p>(id=1, number of tasks to sync = 2)</p> |
 # 2.1.4 task stop
 
-task stop 명령문은 서브태스크의 실행을 강제로 정지하는 역할을 수행합니다. 
+The `task stop` statement forcibly stops execution of a sub task.
 
 ```
-task stop,sub=<서브태스크 번호>,job=<프로그램 번호>
+task stop,sub=<sub_task_number>,job=<program_number>
 ```
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">항목</th>
-      <th style="text-align:left">내용</th>
+      <th style="text-align:left">Item</th>
+      <th style="text-align:left">Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left">
-        서브태스크 번호
-      </td>
-      <td style="text-align:left">
-        정지를 원하는 서브태스크 번호를 지정(0 ~ 7) <br>
-        (0으로 지정하면 기동중인 프로그램 번호에 해당하는  태스크를 찾아 그 태스크를 정지)  
-      </td>
+      <td style="text-align:left">Sub task number</td>
+      <td style="text-align:left">Specify the sub task number to stop (0 ~ 7).<br>(If set to 0, the controller finds the task running the specified program number and stops that task.)</td>
     </tr>
     <tr>
-      <td style="text-align:left"> 
-        프로그램 번호
-      </td>
-      <td style="text-align:left">
-        서브태스크에서 번호가 0으로 지정된 경우에 사용. 실행중인 프로그램을 지정(1 ~ 9999)
-      </td>
+      <td style="text-align:left">Program number</td>
+      <td style="text-align:left">Used when the sub task number is specified as 0. Specifies the running program (1 ~ 9999).</td>
     </tr>
     <tr>
-      <td style="text-align:left"> 
-        사용 예시
-      </td>
-      <td style="text-align:left">
-        task stop,sub=1 (서브태스크 1의 실행을 정지) <br>
-        task stop,sub=0,job=11 (프로그램 11이 기동중인 태스크의 실행을 정지)
-      </td>
+      <td style="text-align:left">Usage examples</td>
+      <td style="text-align:left">task stop,sub=1 (stop execution of sub task 1)<br>task stop,sub=0,job=11 (stop execution of the task running program 11)</td>
     </tr>
   </tbody>
-</table># 2.1.5 task reset
+</table>
+# 2.1.5 task reset
 
-task reset 명령문은 서브태스크를 강제로 소멸하는 역할을 수행합니다. 일반적으로 서브태스크 소멸은 해당 서브태스크 프로그램의 end 명령문 실행에 의해 자동으로 처리됩니다. 
+The `task reset` statement forcibly destroys a sub task. Normally a sub task is destroyed automatically when an `end` statement in that sub task program is executed.
 
 ```
-task reset,sub=<서브태스크 번호>,job=<프로그램 번호>
+task reset,sub=<sub_task_number>,job=<program_number>
 ```
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">항목</th>
-      <th style="text-align:left">내용</th>
+      <th style="text-align:left">Item</th>
+      <th style="text-align:left">Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left">
-        서브태스크 번호
-      </td>
-      <td style="text-align:left">
-        소멸을 원하는 서브태스크 번호를 지정(0 ~ 7) <br>
-        (0으로 지정하면 기동중인 프로그램 번호에 해당하는  태스크를 찾아 그 태스크를 소멸)  
-      </td>
+      <td style="text-align:left">Sub task number</td>
+      <td style="text-align:left">Specify the sub task number to destroy (0 ~ 7).<br>(If set to 0, the controller finds the task running the specified program number and destroys that task.)</td>
     </tr>
     <tr>
-      <td style="text-align:left"> 
-        프로그램 번호
-      </td>
-      <td style="text-align:left">
-        서브태스크에서 번호가 0으로 지정된 경우에 사용. 실행중인 프로그램을 지정(1 ~ 9999)
-      </td>
+      <td style="text-align:left">Program number</td>
+      <td style="text-align:left">Used when the sub task number is specified as 0. Specifies the running program (1 ~ 9999).</td>
     </tr>
     <tr>
-      <td style="text-align:left"> 
-        사용 예시
-      </td>
-      <td style="text-align:left">
-        task reset,sub=1 (서브태스크 1을 소멸) <br>
-        task reset,sub=0,job=11 (프로그램 11이 기동중인 태스크를 소멸)
-      </td>
+      <td style="text-align:left">Usage examples</td>
+      <td style="text-align:left">task reset,sub=1 (destroy sub task 1)<br>task reset,sub=0,job=11 (destroy the task running program 11)</td>
     </tr>
   </tbody>
 </table>
 # 2.1.6 axisctrl
 
-axisctrl 명령문은 move 명령문 실행에 의해 각축의 위치를 이동할 때, 해당 부가축에 대해서 로봇과 함께 목표위치로 이동할 지 여부를 지정하는 역할을 수행합니다.  
+The `axisctrl` statement specifies whether auxiliary axes should move together with the robot to the target position when a `move` statement is executed.
 
 ```
-axisctrl <on/off>,a=<부가축 번호>
-axisctrl <on/off>,a=[부가축 번호,부가축 번호,...] : 복수지정 가능(최대 4개)
+axisctrl <on/off>,a=<aux_axis_number>
+axisctrl <on/off>,a=[aux_axis_number,aux_axis_number,...]  # multiple can be specified (up to 4)
 ```
 
-|    **항목**    | 　　　　　　　　　　**내용**                                  |
-| :----------: | ------------------------------------------------- |
-| **on/off** | on=축제어 유효, off=축제어 무효                       |
-| **부가축 번호** | 축제어 상태 변경을 위한 부가축 번호(배열에 의한 복수 지정 가능)                       |
-|    **사용 예시**   | <p># 메인태스크 프로그램</p><p>print ”maintask”</p><p>move P,spd=30%,accu=3,tool=1  #서보건 동시 이동</p><p><mark style="background-color:green;">axisctrl off,a=2 </mark># 서보건을 메인태스크에서 제어하지 않음</p><p>task start,sub=1,job=11</p><p>move P,spd=30%,accu=3,tool=1  #서보건 이동 X</p><p>move P,spd=30%,accu=3,tool=1  #서보건 이동 X</p><p>delay 1</p><p>…</p><p>move P,spd=30%,accu=3,tool=1  #서보건 이동 X</p><p>task wait,sub=1 #서브태스크 1 종료 대기</p><p><mark style="background-color:green;">axisctrl on,a=2</mark># 서보건을 메인태스크에서 동기 제어함</p><p>move P,spd=30%,accu=3,tool=1  #서보건 동시 이동</p><p>move P,spd=30%,accu=3,tool=1  #서보건 동시 이동</p><p>…</p> |
-|                | <p># 서브 태스크 1 프로그램</p><p>print ”서보건 이동/팁드레싱/건서치 동작”</p><p>move P,spd=30%,accu=3,tool=1  #서보건 이동</p><p>spot gun=1,cnd=255,seq=64 #서보건 팁드레싱</p><p>move P,spd=30%,accu=3,tool=1  #서보건 이동</p><p>gunsea gun=1,sea=1,pre=100,spd=20  #서보건 마모량 측정</p><p>move P,spd=30%,accu=3,tool=1  #서보건 이동</p><p>end</p>
+| **Item** | **Description** |
+| :------: | --------------- |
+| **on/off** | on = axis control enabled, off = axis control disabled |
+| **aux_axis_number** | The auxiliary axis number for which axis control state is changed (multiple numbers can be specified as an array) |
+| **Usage example** | <p># Main task program</p><p>print "maintask"</p><p>move P,spd=30%,accu=3,tool=1  # Servo-gun concurrent move</p><p><mark style="background-color:green;">axisctrl off,a=2 </mark># Do not control the servo-gun from the main task</p><p>task start,sub=1,job=11</p><p>move P,spd=30%,accu=3,tool=1  # Servo-gun movement ignored</p><p>move P,spd=30%,accu=3,tool=1  # Servo-gun movement ignored</p><p>delay 1</p><p>…</p><p>move P,spd=30%,accu=3,tool=1  # Servo-gun movement ignored</p><p>task wait,sub=1 # Wait for sub task 1 to finish</p><p><mark style="background-color:green;">axisctrl on,a=2</mark># Main task now synchronously controls the servo-gun</p><p>move P,spd=30%,accu=3,tool=1  # Servo-gun concurrent move</p><p>move P,spd=30%,accu=3,tool=1  # Servo-gun concurrent move</p><p>…</p> |
+| | <p># Sub task 1 program</p><p>print "Servo-gun move / tip dressing / gun search"</p><p>move P,spd=30%,accu=3,tool=1  # Servo-gun move</p><p>spot gun=1,cnd=255,seq=64 # Servo-gun tip dressing</p><p>move P,spd=30%,accu=3,tool=1  # Servo-gun move</p><p>gunsea gun=1,sea=1,pre=100,spd=20  # Servo-gun wear measurement</p><p>move P,spd=30%,accu=3,tool=1  # Servo-gun move</p><p>end</p>
 
-### 참고사항
+### Notes
 
-```python
-   로봇축에 대한 축제어 기능은 지원하지 않습니다.
-   불연속 명령문으로 처리되어 해당 스텝은 코너링을 하지 않습니다.
 ```
-# 2.2 모니터링
+Robot axis control for robot axes is not supported.
+This is treated as a discontinuous statement so the step does not perform cornering.
+```
+# 2.2 Monitoring
+# 2.2.1 Multitask state
 
-# 2.2.1 멀티태스킹 상태
+From **Window Select** → **Multitasking**, you can view various statuses including the program number assigned to each task.
 
-『**창선택**』 → 『**멀티태스킹**』에서 각각의 태스크에 할당된 프로그램 번호를 포함하여 각종 상태를 확인할 수 있습니다.
+![Figure 2‑4 Multitasking monitoring window](<../../_assets/image_6.png>)
+# 2.3 Sub-task creation
+# 2.3.1 Automatic creation
 
-![ 그림 2‑4 멀티태스킹 모니터링 창](<../../_assets/image_6.png>)
-# 2.3 서브태스크 생성
+When a `task start` statement is executed within a main task program or a sub task program, the specified program is assigned to the desired sub task and the sub task is created automatically.
+# 2.3.2 Manual creation
 
-# 2.3.1 자동 생성
+This method allows the user to assign and start a program on a desired sub task via teach pendant (TP) operations. The manual creation procedure is as follows:
 
-메인태스크 프로그램 또는 서브태스크 프로그램 내에서 task start 명령문 실행에 의해 원하는 서브태스크에 프로그램이 할당되어 서브태스크가 자동 생성됩니다.
-# 2.3.2 수동 생성
+From **Window Select** → **Multitasking**, move the cursor to the desired sub task and choose **Edit** to select a program.
 
-사용자가 TP 조작을 통해서 원하는 서브태스크에 프로그램을 할당하고 실행시키는 방법입니다. 수동 생성 절차는 다음과 같습니다.
+![Figure 2‑5 Manual sub task creation](<../../_assets/image_4.png>)
+# 2.4 Sub-task destruction
+# 2.4.1 Automatic destruction
 
-『**창선택**』 → 『**멀티태스킹**』창에서 원하는 서브태스크로 커서를 이동하여 『**편집**』 버튼으로  프로그램 선택
+When an `end` statement is executed in a sub task program, the sub task is automatically destroyed.
+# 2.4.2 Manual destruction
 
-![그림 2‑5 서브태스크 수동생성](<../../_assets/image_4.png>)
-# 2.4 서브태스크 소멸
+You can manually destroy and clear a sub task by selecting the program number `0` in the monitoring window. Procedure:
 
-# 2.4.1 자동 소멸
+From **Window Select** → **Multitasking**, move the cursor to the desired sub task and choose **Edit**, then set the program number to `0`.
 
-서브태스크의 프로그램에서 end 명령문이 실행되면 서브태스크는 자동 소멸됩니다.
-# 2.4.2 수동 소멸
+![Figure 2‑6 Manual sub task destruction](../../_assets/image.png)
 
-서브태스크를 수동으로 소멸시키고 클리어하는 것은 모니터링 창에서 프로그램 번호를 0으로 선택하는 방식으로 할 수 있습니다. 절차는 다음과 같습니다.
+Additionally, executing `task reset` will destroy the associated sub task.
 
-『**창선택**』 → 『**멀티태스크**』에서 원하는 서브태스크로 커서를 이동하여 『**편집**』 버튼으로 프로그램 번호를 ‘**0**’선택
+The following operations will destroy all sub tasks:
+- Re-selecting the main task program in MANUAL mode
+- Executing `*R0 : Task Reset*` in MANUAL mode
+# 2.5 Step forward/backward
 
-![그림 2 6 멀티태스크 수동 소멸](../../_assets/image.png)
+To step forward or backward all created tasks simultaneously, or only the currently selected task, use the keys summarized in the table below. The step behavior for the main task and sub tasks is as follows.
 
-이외에도 task reset을 실행하면 해댱 서브테스크가 소멸됩니다. 
-<br/>
-<br/>
-하기의 조작시에는 모든 서브태스크가 소멸됩니다.
-- 수동모드에서 메인태스크의 프로그램을 다시 선택할 때
-- 수동모드에서 ‘*R0 : 태스크 리셋*’을 실행할 때
+| **Action** | **Description** |
+| :--------: | --------------- |
+| [**FWD**]/[**BWD**] key | Step forward/backward for all created tasks simultaneously |
+| [**CTRL**]+[**FWD**]/[**BWD**] key | Step forward/backward for the currently selected task only |
+# 2.6 Motor ON handling
 
+To start a task, in AUTO mode enable **MOTOR ON** and **START**, or in MANUAL mode enable **MOTOR ON** and press the [**FWD**] key. Alternatively, sub tasks can be started by executing statements independently or by using external signals in conjunction with script commands.
+# 2.7 Stop handling
 
-# 2.5 스텝 전/후진
+If the stop button on the teach pendant is pressed or an external stop signal is input during multi-task operation, all tasks will stop.
 
-생성된 모든 태스크를 동시에 스텝 전/후진을 하거나 현재 선택된 태스크만 스텝 전/후진을 하고자 할 때에는 아래 표에 정리된 키를 이용하면 됩니다. 스텝 전/후진 키를 선택할 때 메인태스크와 서브태스크의 스텝 동작은 아래 표와 같습니다.
+In addition, executing the `task stop` statement stops the corresponding sub task.
+# 2.8 Motor ON/STOP lamp
 
-|               **동작**               | 　　　　　　　　　　**내용**       |
-| :--------------------------------: | ---------------------- |
-|       \[**FWD**]/\[**BWD**]키       | 생성된 모든 태스크 동시에 전/후진 실행 |
-| \[**CTRL**]+\[**FWD**]/\[**BWD**]키 | 현재 선택된 태스크만 전/후진 실행    |
-# 2.6 기동 처리
+The operation status lamp (Motor ON / Stop lamp) on the teach pendant indicates the state of task execution as shown in the table below.
 
-태스크를 실행하려면 자동모드에서 ‘**MOTOR ON**’, ‘**START**’를 활성화하거나 수동모드에서 ‘**MOTOR ON**’을 활성화 시키고 \[**FWD**] 키를 선택하면 됩니다. 이외에 명령문 독립실행을 통해서 외부 신호와 연계해 서브태스크를 실행할 수도 있습니다.
-# 2.7 정지 처리
-
-멀티 태스크 동작 중에 T/P의 정지 버튼을 누르거나 외부의 정지 신호가 입력되면 모든 태스크는 정지됩니다.
-<br/>
-이외에도 task stop 명령문을 실행하면 해당 서브태스크가 정지합니다.
-# 2.8 기동/정지 램프
-
-티치펜던트의 기동/정지 램프는 태스크의 동작 상태를 표시하며 그 상태는 아래의 표와 같습니다.
-
-|        **동작**       | 　　　　　　　　　　**내용**  |
-| :-----------------: | ----------------- |
-| 기동램프 ON  / 정지램프 OFF | 하나의 태스크라도 기동중인 경우 |
-|  기동램프 OFF / 정지램프 ON | 모든 태스크가 정지된 경우    |
+| **Indicator** | **Meaning** |
+| :------------: | ------------ |
+| Motor ON lamp ON / Stop lamp OFF | At least one task is running |
+| Motor ON lamp OFF / Stop lamp ON | All tasks are stopped |

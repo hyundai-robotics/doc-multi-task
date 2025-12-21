@@ -1,23 +1,22 @@
-﻿# 1.1 멀티태스킹 기능에 대하여
+# 1.1 About the multi-tasking feature
 
-${cont_model} 제어기는 총 8개의 프로그램(JOB 파일)을 동시에 독립적으로 실행할 수 있으며, 이러한 독립된 동작방식에 의해 수행되는 멀티태스킹 제어를 “**멀티태스킹 기능**”이라 합니다.
+The ${cont_model} controller can run up to 8 programs (JOB files) simultaneously and independently. This independent operation mode is referred to as the **multi-tasking feature**.
 
-멀티태스크 기능을 이용하면 로봇 제어 프로그램을 실행하면서 동시에 다른 디바이스를 제어하는 프로그램을 실행할 수 있습니다. 이때 로봇 제어와 다른 디바이스 제어를 서로 독립적으로 수행할 수 있고 필요한 경우에는 로봇과 다른 디바이스가 서로 동기된 상태로 협업작업을 할 수도 있어 복잡하고 어려운 응용작업을 수행할 수 있는 이점이 있습니다.
+With multi-tasking, you can execute a robot control program while simultaneously running programs that control other devices. Robot control and other device control can operate independently, and when needed they can work in a synchronized state to cooperate. This enables performing complex and sophisticated application tasks.
 
-아래의 그림 1-1은 싱글태스킹 구조입니다. 여기서는 1개의 태스크만 존재하여 2개 이상의 프로그램을 동시에 독립적으로 실행 할 수 없습니다. 이어서 설명할 멀티태스킹 구조와 비교해 보면 메인태스크만 존재하고 서브태스크는 없다고 생각하면 됩니다.
+Figure 1-1 below shows a single-tasking structure. In this case only one task exists, so it is not possible to independently run two or more programs at the same time. Compared to the multi-tasking structure described later, you can think of this as having only the main task and no sub tasks.
 
-![그림 1-1 싱글태스킹 구조](<../_assets/image_1.png>)
+![Figure 1-1 Single-tasking structure](<../_assets/image_1.png>)
 
-아래의 그림 1‑2은 멀티태스킹 구조입니다. 최대 8개의 태스크가 동시 실행 가능하기 때문에 각 태스크 당 1개의 프로그램 (JOB 파일)을 할당하여 최대 8개의 프로그램(JOB 파일)을 독립적으로 동시에 실행할 수 있습니다. 8개의 태스크를 동시에 수행함으로써 다수의 디바이스 제어를 독립적으로 수행할 수 있습니다.
+Figure 1‑2 below shows a multi-tasking structure. Because up to 8 tasks can run concurrently, one program (JOB file) can be assigned per task, allowing up to 8 programs (JOB files) to run independently and simultaneously. Running 8 tasks concurrently allows independent control of multiple devices.
 
-![그림 1‑2 멀티태스킹 구조](<../_assets/image_2.png>)
+![Figure 1‑2 Multi-tasking structure](<../_assets/image_2.png>)
 
-프로그램을 실행하는 8개의 태스크들의 명칭은 아래와 같습니다.
+The names of the eight tasks that execute programs are as follows:
 
-* 메인태스크
-* 서브태스크 1 \~ 7
+* Main task
+* Sub task 1 ~ 7
 
-메인태스크는 JOB 프로그램을 수행하기 위해서 항상 기본으로 생성되고 존재하며, 서브태스크는 필요에 따라 생성과 소멸이 가능합니다. 아래의 그림 1-3은 서브태스크 생성 구조입니다. 서브태스크의 생성은 프로그램에서 task start 명령문을 실행할 때 자동으로 이루어집니다. 서브태스크의 소멸은 task reset 명령문이 실행될 때나 각각의 서브태스크 프로그램에서 end 명령문이 실행될 때 자동으로 이루어집니다.
+The main task is always created and present by default to execute JOB programs. Sub tasks can be created and destroyed as needed. Figure 1‑3 below shows the sub task creation structure. Sub tasks are created automatically when the program executes a `task start` statement. Sub tasks are destroyed automatically when a `task reset` statement is executed or when an `end` statement is executed in each sub task program.
 
-![그림 1‑3 서브태스크 생성
-](<../_assets/image_3.png>)
+![Figure 1‑3 Sub task creation](<../_assets/image_3.png>)

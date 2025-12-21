@@ -1,63 +1,48 @@
-﻿# 2.1.1 task start
+# 2.1.1 task start
 
-task start 명령문은 서브태스크를 생성, 서브태스크에 특정 job 프로그램을 할당, 서브태스크의 프로그램을 기동하는 역할을 수행합니다.
+The `task start` statement creates a sub task, assigns a specific job program to it, and starts the sub task program.
 
-task start 명령어는 『**명령입력**』→『**기타**』→『**task**』 순서대로 선택해서 입력을 할 수 있습니다.
+The `task start` statement can be entered from **Command Input** → **Other** → **Task**.
 
 ```
-task start,sub=<서브태스크 번호>,job=<프로그램 번호>
+task start,sub=<sub_task_number>,job=<program_number>
 ```
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">항목</th>
-      <th style="text-align:left">내용</th>
+      <th style="text-align:left">Item</th>
+      <th style="text-align:left">Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left">
-        서브태스크 번호
-      </td>
-      <td style="text-align:left">
-        생성할 서브태스크 번호를 지정(0 ~ 7) <br>
-        (0으로 지정하면 미사용중인 태스크중 하나를 자동으로 선정하고 이 태스크를 사용)  
-      </td>
+      <td style="text-align:left">Sub task number</td>
+      <td style="text-align:left">Specify the sub task number to create (0 ~ 7).<br>(If set to 0, an unused task is selected automatically and used.)</td>
     </tr>
     <tr>
-      <td style="text-align:left"> 
-        프로그램 번호
-      </td>
-      <td style="text-align:left">
-        생성된 서브태스크에서 실행할 프로그램을 지정(1 ~ 9999)
-      </td>
+      <td style="text-align:left">Program number</td>
+      <td style="text-align:left">Specify the program to run in the created sub task (1 ~ 9999).</td>
     </tr>
     <tr>
-      <td style="text-align:left"> 
-        사용 예시
-      </td>
-      <td style="text-align:left">
-        task start,sub=1,job=11 (서브 태스크 1에 0011.job 를 할당하여 실행) <br>
-        task start,sub=0,job=11 (서브 태스크를 자동으로 선정하여 0011.job 를 실행)
-      </td>
+      <td style="text-align:left">Usage examples</td>
+      <td style="text-align:left">task start,sub=1,job=11 (assign and run 0011.job on sub task 1)<br>task start,sub=0,job=11 (automatically select a sub task and run 0011.job)</td>
     </tr>
   </tbody>
 </table>
 
+![Figure 2‑1 Example of using task start](<../../_assets/image_5.png>)
 
-![그림 2 1 task start 명령어 사용 예시](<../../_assets/image_5.png>)
+![Figure 2‑2 Example of sub task creation and wait for termination](<../../_assets/image_7.png>)
 
-![그림 2 2 서브태스크 생성과 종료대기 예시](<../../_assets/image_7.png>)
+Note: The sub task number to be created must be a different sub task number than the calling task's own number. Also, `task start` cannot be applied in certain error conditions described below.
 
-주의할 점으로 생성하고자 하는 서브태스크 번호는 자기 자신의 번호가 아닌 다른 서브태스크 번호이어야 합니다. 이외에도 task start 명령은 아래에서 설명하는 경우에는 오류 상황으로 적용이 불가능하니 주의가 필요합니다.
+If you attempt to create a sub task with `task start` when that sub task is already created and running, assigning another program to that sub task will result in an error. See the example below.
 
-task start를 이용하여 생성하고자 하는 서브태스크가 이미 생성되어 실행중인 경우에 다른 프로그램을 해당 서브태스크에서 생성하면 오류가 발생합니다. 아래의 예시를 참고하시기 바랍니다.
+* <mark style="color:green;">**Error when assigning and starting another program on a running sub task**</mark>
 
-*   <mark style="color:green;">**서브태스크 실행 중 다른 프로그램 할당과 실행 오류**</mark>
-
-    ```
-    task start,sub=1,job=11 # subtask 1 was started
-    task start,sub=1,job=12
-    …
-    ```
+```
+task start,sub=1,job=11 # subtask 1 was started
+task start,sub=1,job=12
+…
+```
