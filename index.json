@@ -16,107 +16,162 @@
 	},
 	{
 		"link": "1-overview/1-2-term-explan.md",
-		"char_ofs": 1367,
-		"byte_ofs": 2980
+		"char_ofs": 1457,
+		"byte_ofs": 3202
 	},
 	{
 		"link": "2-related-function/README.md",
-		"char_ofs": 2586,
-		"byte_ofs": 4787
+		"char_ofs": 2676,
+		"byte_ofs": 5009
 	},
 	{
 		"link": "2-related-function/2-1-command-sentence/README.md",
-		"char_ofs": 2598,
-		"byte_ofs": 4812
+		"char_ofs": 2688,
+		"byte_ofs": 5034
 	},
 	{
 		"link": "2-related-function/2-1-command-sentence/1-task-start.md",
-		"char_ofs": 2609,
-		"byte_ofs": 4834
+		"char_ofs": 2699,
+		"byte_ofs": 5056
 	},
 	{
 		"link": "2-related-function/2-1-command-sentence/2-task-wait.md",
-		"char_ofs": 4179,
-		"byte_ofs": 7316
+		"char_ofs": 4269,
+		"byte_ofs": 7538
 	},
 	{
 		"link": "2-related-function/2-1-command-sentence/3-task-sync.md",
-		"char_ofs": 5218,
-		"byte_ofs": 8907
+		"char_ofs": 5308,
+		"byte_ofs": 9129
 	},
 	{
 		"link": "2-related-function/2-1-command-sentence/4-task-stop.md",
-		"char_ofs": 6967,
-		"byte_ofs": 11293
+		"char_ofs": 7057,
+		"byte_ofs": 11515
 	},
 	{
 		"link": "2-related-function/2-1-command-sentence/5-task-reset.md",
-		"char_ofs": 7897,
-		"byte_ofs": 12613
+		"char_ofs": 7987,
+		"byte_ofs": 12835
 	},
 	{
 		"link": "2-related-function/2-1-command-sentence/6-axisctrl.md",
-		"char_ofs": 8879,
-		"byte_ofs": 14052
+		"char_ofs": 8969,
+		"byte_ofs": 14274
 	},
 	{
 		"link": "2-related-function/2-2-monitoring/README.md",
-		"char_ofs": 10392,
-		"byte_ofs": 16270
+		"char_ofs": 10482,
+		"byte_ofs": 16492
 	},
 	{
-		"link": "2-related-function/2-2-monitoring/1-multitask-state.md",
-		"char_ofs": 10404,
-		"byte_ofs": 16295
+		"link": "2-related-function/2-2-monitoring/1-monitoring-pane.md",
+		"char_ofs": 10494,
+		"byte_ofs": 16517
 	},
 	{
-		"link": "2-related-function/2-3-sub-task-create/README.md",
-		"char_ofs": 10548,
-		"byte_ofs": 16585
+		"link": "2-related-function/2-2-monitoring/2-title-frame.md",
+		"char_ofs": 10636,
+		"byte_ofs": 16801
 	},
 	{
-		"link": "2-related-function/2-3-sub-task-create/1-auto-create.md",
-		"char_ofs": 10564,
-		"byte_ofs": 16620
+		"link": "2-related-function/2-3-subtask-create/README.md",
+		"char_ofs": 10882,
+		"byte_ofs": 17242
 	},
 	{
-		"link": "2-related-function/2-3-sub-task-create/2-manual-create.md",
-		"char_ofs": 10669,
-		"byte_ofs": 16863
+		"link": "2-related-function/2-3-subtask-create/1-auto-create.md",
+		"char_ofs": 10898,
+		"byte_ofs": 17277
 	},
 	{
-		"link": "2-related-function/2-4-sub-task-exist/README.md",
-		"char_ofs": 10877,
-		"byte_ofs": 17309
+		"link": "2-related-function/2-3-subtask-create/2-manual-create.md",
+		"char_ofs": 11003,
+		"byte_ofs": 17520
 	},
 	{
-		"link": "2-related-function/2-4-sub-task-exist/1-auto-exist.md",
-		"char_ofs": 10893,
-		"byte_ofs": 17344
+		"link": "2-related-function/2-4-subtask-delete/README.md",
+		"char_ofs": 11211,
+		"byte_ofs": 17966
 	},
 	{
-		"link": "2-related-function/2-4-sub-task-exist/2-manual-exist.md",
-		"char_ofs": 10953,
-		"byte_ofs": 17484
+		"link": "2-related-function/2-4-subtask-delete/1-auto-delete.md",
+		"char_ofs": 11227,
+		"byte_ofs": 18001
 	},
 	{
-		"link": "2-related-function/2-5-forward-backward-step.md",
-		"char_ofs": 11324,
-		"byte_ofs": 18296
+		"link": "2-related-function/2-4-subtask-delete/2-manual-delete.md",
+		"char_ofs": 11287,
+		"byte_ofs": 18140
 	},
 	{
-		"link": "2-related-function/2-6-motor-on.md",
-		"char_ofs": 11729,
-		"byte_ofs": 19004
+		"link": "2-related-function/2-5-task-conversion/README.md",
+		"char_ofs": 11658,
+		"byte_ofs": 18952
 	},
 	{
-		"link": "2-related-function/2-7-stop.md",
-		"char_ofs": 11900,
-		"byte_ofs": 19363
+		"link": "2-related-function/2-5-task-conversion/1-robot-prog.md",
+		"char_ofs": 11672,
+		"byte_ofs": 18981
 	},
 	{
-		"link": "2-related-function/2-8-motor-on-stop-lamp.md",
-		"char_ofs": 12022,
-		"byte_ofs": 19635
+		"link": "2-related-function/2-5-task-conversion/2-os-assign.md",
+		"char_ofs": 12117,
+		"byte_ofs": 19653
+	},
+	{
+		"link": "2-related-function/2-6-job-select/README.md",
+		"char_ofs": 12438,
+		"byte_ofs": 20289
+	},
+	{
+		"link": "2-related-function/2-6-job-select/1-maintask-sel.md",
+		"char_ofs": 12453,
+		"byte_ofs": 20321
+	},
+	{
+		"link": "2-related-function/2-6-job-select/2-subtask-sel.md",
+		"char_ofs": 12803,
+		"byte_ofs": 20899
+	},
+	{
+		"link": "2-related-function/2-7-step-goback.md",
+		"char_ofs": 13160,
+		"byte_ofs": 21456
+	},
+	{
+		"link": "2-related-function/2-8-start.md",
+		"char_ofs": 13565,
+		"byte_ofs": 22164
+	},
+	{
+		"link": "2-related-function/2-9-stop.md",
+		"char_ofs": 13736,
+		"byte_ofs": 22523
+	},
+	{
+		"link": "2-related-function/2-10-start-stop-lamp.md",
+		"char_ofs": 13858,
+		"byte_ofs": 22795
+	},
+	{
+		"link": "2-related-function/2-11-multitask-job/README.md",
+		"char_ofs": 14105,
+		"byte_ofs": 23253
+	},
+	{
+		"link": "2-related-function/2-11-multitask-job/1-outline.md",
+		"char_ofs": 14124,
+		"byte_ofs": 23295
+	},
+	{
+		"link": "2-related-function/2-11-multitask-job/2-example.md",
+		"char_ofs": 15041,
+		"byte_ofs": 24965
+	},
+	{
+		"link": "2-related-function/2-11-multitask-job/3-warning.md",
+		"char_ofs": 15919,
+		"byte_ofs": 26901
 	}
 ]
