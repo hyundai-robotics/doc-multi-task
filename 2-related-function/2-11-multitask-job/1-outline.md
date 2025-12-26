@@ -10,9 +10,9 @@
 
 본 기능을 사용하기 위해서는 메커니즘 세트(mechset), 매커니즘의 설정, axisctrl 명령의 사용이 
 필요합니다. 간략한 정의는 아래와 같습니다. 
-- 매커니즘 : 축의 조합(로봇축, 부가축)을 세트로 구성한 것으로 조그로 하나의 매커니즘을 선택해서 매커니즘 단위로 조작이 가능합니다. "[Hi6 로봇제어기 조작설명서 - 메커니즘 설정](https://hrbook-hrc.web.app/#/view/doc-hi6-operation/korean-Hi6-tp630/7-system/6-initialization/6-mechannism-set) 
+- 매커니즘 : 축의 조합(로봇축, 부가축)을 세트로 구성한 것으로 조그로 하나의 매커니즘을 선택해서 매커니즘 단위로 조작이 가능합니다. "[${cont_model} 로봇제어기 조작설명서 - 메커니즘 설정](https://hrbook-hrc.web.app/#/view/doc-hi6-operation/korean-${cont_model}-tp630/7-system/6-initialization/6-mechannism-set) 
 - 메커니즘 세트 : 매커니즘의 선택적 조합으로 매커니즘과의 차이는 작업 프로그램에서 스텝을 기
-록할 때 기록이 되는 점입니다.  "[Hi6 로봇제어기 조작설명서 - 기록 조건](https://hrbook-hrc.web.app/#/view/doc-hi6-operation/korean-Hi6-tp630/3-programming/2-prog-edit/2-statement-input/3-rec-cond)"
+록할 때 기록이 되는 점입니다.  "[${cont_model} 로봇제어기 조작설명서 - 기록 조건](https://hrbook-hrc.web.app/#/view/doc-hi6-operation/korean-${cont_model}-tp630/3-programming/2-prog-edit/2-statement-input/3-rec-cond)"
 - axisctrl : 부가축의 제어 설정에 관한 명령문입니다. "[2.1.6 axisctrl](../../2-related-function/2-1-command-sentence/6-axisctrl.md)" 
 
 
