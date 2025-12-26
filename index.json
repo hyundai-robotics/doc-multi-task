@@ -116,62 +116,62 @@
 	},
 	{
 		"link": "2-related-function/2-5-task-conversion/2-os-assign.md",
-		"char_ofs": 12117,
-		"byte_ofs": 19653
+		"char_ofs": 12104,
+		"byte_ofs": 19620
 	},
 	{
 		"link": "2-related-function/2-6-job-select/README.md",
-		"char_ofs": 12438,
-		"byte_ofs": 20289
+		"char_ofs": 12412,
+		"byte_ofs": 20223
 	},
 	{
 		"link": "2-related-function/2-6-job-select/1-maintask-sel.md",
-		"char_ofs": 12453,
-		"byte_ofs": 20321
+		"char_ofs": 12427,
+		"byte_ofs": 20255
 	},
 	{
 		"link": "2-related-function/2-6-job-select/2-subtask-sel.md",
-		"char_ofs": 12803,
-		"byte_ofs": 20899
+		"char_ofs": 12777,
+		"byte_ofs": 20833
 	},
 	{
 		"link": "2-related-function/2-7-step-goback.md",
-		"char_ofs": 13160,
-		"byte_ofs": 21456
+		"char_ofs": 13134,
+		"byte_ofs": 21390
 	},
 	{
 		"link": "2-related-function/2-8-start.md",
-		"char_ofs": 13565,
-		"byte_ofs": 22164
+		"char_ofs": 13539,
+		"byte_ofs": 22098
 	},
 	{
 		"link": "2-related-function/2-9-stop.md",
-		"char_ofs": 13736,
-		"byte_ofs": 22523
+		"char_ofs": 13710,
+		"byte_ofs": 22457
 	},
 	{
 		"link": "2-related-function/2-10-start-stop-lamp.md",
-		"char_ofs": 13858,
-		"byte_ofs": 22795
+		"char_ofs": 13832,
+		"byte_ofs": 22729
 	},
 	{
 		"link": "2-related-function/2-11-multitask-job/README.md",
-		"char_ofs": 14105,
-		"byte_ofs": 23253
+		"char_ofs": 14079,
+		"byte_ofs": 23187
 	},
 	{
 		"link": "2-related-function/2-11-multitask-job/1-outline.md",
-		"char_ofs": 14124,
-		"byte_ofs": 23295
+		"char_ofs": 14098,
+		"byte_ofs": 23229
 	},
 	{
 		"link": "2-related-function/2-11-multitask-job/2-example.md",
-		"char_ofs": 15041,
-		"byte_ofs": 24965
+		"char_ofs": 15015,
+		"byte_ofs": 24899
 	},
 	{
 		"link": "2-related-function/2-11-multitask-job/3-warning.md",
-		"char_ofs": 15919,
-		"byte_ofs": 26901
+		"char_ofs": 15898,
+		"byte_ofs": 26841
 	}
 ]

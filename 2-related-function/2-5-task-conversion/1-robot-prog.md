@@ -11,10 +11,10 @@
 <br>
 [메인 태스크]
 
-![메인 태스크](<../../_assets/image_9.png>)
+![](<../../_assets/image_9.png>)
 
 <br>
 
 [서브태스크 1]
 
-![서브태스크 1](<../../_assets/image_10.png>)
+![](<../../_assets/image_10.png>)

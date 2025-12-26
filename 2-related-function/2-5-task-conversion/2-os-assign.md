@@ -7,10 +7,10 @@
 <br>
 [메인 태스크]
 
-![메인 태스크](<../../_assets/image_11.png>)
+![](<../../_assets/image_11.png>)
 
 <br>
 
 [서브태스크 1]
 
-![서브태스크 1](<../../_assets/image_12.png>)
+![](<../../_assets/image_12.png>)
