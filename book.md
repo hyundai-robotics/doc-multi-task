@@ -20,7 +20,7 @@ Figure 1-1 below shows a single-tasking structure. In this case only one task ex
 
 ![Figure 1-1 Single-tasking structure](<../_assets/image_1.png>)
 
-Figure 1‑2 below shows a multi-tasking structure. Because up to 8 tasks can run concurrently, one program (JOB file) can be assigned per task, allowing up to 8 programs (JOB files) to run independently and simultaneously. Running 8 tasks concurrently allows independent control of multiple devices.
+Figure 1‑2 below shows a multi-tasking structure. Because up to 8 tasks can run concurrently, one program (JOB file) can be assigned per task, allowing up to 8 programs (JOB files) to run independently and simultaneously. Running 8 tasks concurrently allows independent control of multiple devices. However, robot control is limited to one robot per main task. To perform synchronized tasks using multiple robots simultaneously, please use our cooperative control system.
 
 ![Figure 1‑2 Multi-tasking structure](<../_assets/image_2.png>)
 
@@ -223,60 +223,167 @@ Robot axis control for robot axes is not supported.
 This is treated as a discontinuous statement so the step does not perform cornering.
 ```
 # 2.2 Monitoring
-# 2.2.1 Multitask state
+# 2.2.1 Monitoring pane
 
 From **Window Select** → **Multitasking**, you can view various statuses including the program number assigned to each task.
 
-![Figure 2‑4 Multitasking monitoring window](<../../_assets/image_6.png>)
-# 2.3 Sub-task creation
+![Figure 2‑4 Multitasking monitoring pane](<../../_assets/image_6.png>)
+
+# 2.2.2 Title frame
+
+The execution status of the subtask and the selection status of the current task can be checked in the title frame. <br>
+Task switching can be done with the [CTRL]+[->] key or the [CTRL]+[<-] key, and you can change the currently selected task. For more details, see "[2.5 Task conversion](../2-5-task-conversion/1-robot-prog.md)". 
+
+![](<../../_assets/image_8.png>)
+# 2.3 Subtask creation
 # 2.3.1 Automatic creation
 
-When a `task start` statement is executed within a main task program or a sub task program, the specified program is assigned to the desired sub task and the sub task is created automatically.
+When a `task start` statement is executed within a maintask program or a subtask program, the specified program is assigned to the desired subtask and the subtask is created automatically.
 # 2.3.2 Manual creation
 
-This method allows the user to assign and start a program on a desired sub task via teach pendant (TP) operations. The manual creation procedure is as follows:
+This method allows the user to assign and start a program on a desired subtask via teach pendant (TP) operations. The manual creation procedure is as follows:
 
-From **Window Select** → **Multitasking**, move the cursor to the desired sub task and choose **Edit** to select a program.
+From **Window Select** → **Multitasking**, move the cursor to the desired subtask and choose **Edit** to select a program.
 
-![Figure 2‑5 Manual sub task creation](<../../_assets/image_4.png>)
-# 2.4 Sub-task destruction
+![Figure 2‑5 Manual subtask creation](<../../_assets/image_4.png>)
+# 2.4 Subtask destruction
 # 2.4.1 Automatic destruction
 
-When an `end` statement is executed in a sub task program, the sub task is automatically destroyed.
+When an `end` statement is executed in a subtask program, the subtask is automatically destroyed.
 # 2.4.2 Manual destruction
 
-You can manually destroy and clear a sub task by selecting the program number `0` in the monitoring window. Procedure:
+You can manually destroy and clear a subtask by selecting the program number `0` in the monitoring window. Procedure:
 
-From **Window Select** → **Multitasking**, move the cursor to the desired sub task and choose **Edit**, then set the program number to `0`.
+From **Window Select** → **Multitasking**, move the cursor to the desired subtask and choose **Edit**, then set the program number to `0`.
 
-![Figure 2‑6 Manual sub task destruction](../../_assets/image.png)
+![Figure 2‑6 Manual subtask destruction](../../_assets/image.png)
 
-Additionally, executing `task reset` will destroy the associated sub task.
+Additionally, executing `task reset` will destroy the associated subtask.
 
 The following operations will destroy all sub tasks:
-- Re-selecting the main task program in MANUAL mode
+- Re-selecting the main taskprogram in MANUAL mode
 - Executing `*R0 : Task Reset*` in MANUAL mode
-# 2.5 Step forward/backward
+# 2.5 Task conversion
 
-To step forward or backward all created tasks simultaneously, or only the currently selected task, use the keys summarized in the table below. The step behavior for the main task and sub tasks is as follows.
+# 2.5.1 Robot program
+
+Task switching is possible using key operations, as shown in the table below. Task switching is only possible between created tasks. 
+
+
+|            **Operation**            | 　　　**Description**         |
+| :---------------------------------: | ---------------------------- |
+|       \[**CTRL**]+\[**->**]key      | Switch to next task          |
+|       \[**CTRL**]+\[**<-**]key      | Switch to previous task      |
+
+<br>
+[Maintask]
+
+![](<../../_assets/image_9.png>)
+
+<br>
+
+[Subtask 1]
+
+![](<../../_assets/image_10.png>)
+# 2.5.2 Output signal assign
+
+Output signal assignments for each task can be made using the following menu selection procedure. This can be done even if no subtasks are currently assigned. 
+ 
+You can set output signals for each task by using the [Previous task]/[Next task] buttons on the 『F2: System』-> 『2: Control parameter』-> 『2: Input/Output signal setting』-> 『4: Output signal assign』 screen.
+
+<br>
+[Main task]
+
+![](<../../_assets/image_11.png>)
+
+<br>
+
+[Subtask 1]
+
+![](<../../_assets/image_12.png>)
+# 2.6 Program select
+
+# 2.6.1 Select from maintask
+
+When you select a program in the main task, all created subtasks are stopped and destroyed. 
+
+
+|     **Task types**    | 　　 　　**Action content**                                 |
+| :-------------------: | ---------------------------------------------------------- |
+|       Maintask        | Change program number <br> Clear step and function number  |
+|       Subtask         | Clear program number <br> Clear step and function number   |
+# 2.6.2 Select from subtask
+
+When selecting a program in a subtask, only the program in that subtask is newly selected.
+
+
+|     **Task types**    | 　　 　　**Action content**                                |
+| :-------------------: | --------------------------------------------------------- |
+|       Maintask        | No change                                                 |
+|       Subtask         | Change program number <br> Clear step and function number |
+# 2.7 Step forward/backward
+
+To step forward or backward all created tasks simultaneously, or only the currently selected task, use the keys summarized in the table below. The step behavior for the main task and subtasks is as follows.
 
 | **Action** | **Description** |
 | :--------: | --------------- |
 | [**FWD**]/[**BWD**] key | Step forward/backward for all created tasks simultaneously |
 | [**CTRL**]+[**FWD**]/[**BWD**] key | Step forward/backward for the currently selected task only |
-# 2.6 Motor ON handling
+# 2.8 Start
 
-To start a task, in AUTO mode enable **MOTOR ON** and **START**, or in MANUAL mode enable **MOTOR ON** and press the [**FWD**] key. Alternatively, sub tasks can be started by executing statements independently or by using external signals in conjunction with script commands.
-# 2.7 Stop handling
+To start a task, in AUTO mode enable **MOTOR ON** and **START**, or in MANUAL mode enable **MOTOR ON** and press the [**FWD**] key. Alternatively, subtasks can be started by executing statements independently or by using external signals in conjunction with script commands.
+# 2.9 Stop
 
 If the stop button on the teach pendant is pressed or an external stop signal is input during multi-task operation, all tasks will stop.
 
-In addition, executing the `task stop` statement stops the corresponding sub task.
-# 2.8 Motor ON/STOP lamp
+In addition, executing the `task stop` statement stops the corresponding subtask.
+# 2.10 Start/Stop lamp
 
-The operation status lamp (Motor ON / Stop lamp) on the teach pendant indicates the state of task execution as shown in the table below.
+The operation status lamp (Start/Stop lamp) on the teach pendant indicates the state of task execution as shown in the table below.
 
 | **Indicator** | **Meaning** |
 | :------------: | ------------ |
-| Motor ON lamp ON / Stop lamp OFF | At least one task is running |
-| Motor ON lamp OFF / Stop lamp ON | All tasks are stopped |
+| Start lamp ON / Stop lamp OFF | At least one task is running |
+| Start lamp OFF / Stop lamp ON | All tasks are stopped |
+# 2.11 Multitask program
+
+# 2.11.1 Outline
+
+Applying the multitasking feature allows you to create an independent program that runs the program controlling the additional axis in a subtask.
+
+As shown in the figure below, you can drive additional axes independently in each subtask by specifying a set of mechanisms that do not overlap each other.
+![Mechanism set config.](<../../_assets/image_13.png>)
+
+The main task can control both the robot and the assigned additional axes, but the subtask can only control the assigned additional axes.
+
+To use this feature, you need a mechanism set (mechset), mechanism setting, and the axisctrl command. A brief definition is below.
+- Mechanism setting : It is composed of a set of axes (robot axes, additional axes), and one mechanism can be selected with a jog to operate it as a mechanism unit. "[${cont_model}  Robot Controller Operation Manual - Mechanism Setting](https://hrbook-hrc.web.app/#/view/doc-hi6-operation/english-${cont_model}-tp630/7-system/6-initialization/6-mechannism-set) 
+- Mechanism set : The difference between the optional combination of mechanisms and the mechanism is that the steps in the work program are recorded when they are recorded.  "[${cont_model} Robot Controller Operation Manual - Recording Condition](https://hrbook-hrc.web.app/#/view/doc-hi6-operation/english-${cont_model}-tp630/3-programming/2-prog-edit/2-statement-input/3-rec-cond)"
+- axisctrl : This is a command regarding the control settings of the additional axis. "[2.1.6 axisctrl](../../2-related-function/2-1-command-sentence/6-axisctrl.md)" 
+
+
+# 2.11.2 Example
+
+Let's illustrate a simple example of a multitasking task performed by a system consisting of a robot and a stationary gun, as shown in the figure below. <br>
+
+![](<../../_assets/image_14.png>)
+<br>
+
+Here, the robot can be divided into two cases: a task in which the robot performs spot welding with a stationary gun, and a task in which the stationary gun performs tip dressing and gun search (measuring tip wear) separately from the robot's movements. The structure of the composed work program is as shown in the figure below. <br>
+
+![](<../../_assets/image_15.png>)
+
+- 0001.job running in the main task can be programmed to drive all axes by selecting mechanism set 0, and when the program is run, it sequentially executes move and spot to perform spot welding. 
+- After that, if you execute the axisctrl off command in the main program, the specified axis number will be set to be controlled by the subtask. This way, the main task will not move to the target where the stationary gun is recorded.
+- Use the task start command to specify a program to be executed in a subtask. The program assigned to a subtask must be configured as a separate mechanism set. The task start command executes 0064.job to be executed independently from 0001.job in the main task.
+- When the main task program encounters the task wait command, it waits until the specified subtask is completed and end is executed.
+- The main program then executes the axisctrl on command to take control of the additional axes. Afterwards, you can program all axes to be driven by selecting mechanism set 0.
+
+# 2.11.3 Warnings
+
+When writing move statements in a program to be run as a subtask, note the following: 
+
+- Only axes that have performed axisctrl off in the move statement attribute should be designated with that mechanism.
+- Move statements must be executed exclusively to avoid overlapping mechanisms. 
+- It should be recorded as move P. When executed with L and C, the additional axis can move at full speed.
+- The speed unit must be recorded in % or sec. If recorded in mm/s, the recorded additional axis can operate at maximum speed.

@@ -1,4 +1,4 @@
-# 1.1 About the multi-tasking feature
+﻿# 1.1 About the multi-tasking feature
 
 The ${cont_model} controller can run up to 8 programs (JOB files) simultaneously and independently. This independent operation mode is referred to as the **multi-tasking feature**.
 
@@ -8,7 +8,7 @@ Figure 1-1 below shows a single-tasking structure. In this case only one task ex
 
 ![Figure 1-1 Single-tasking structure](<../_assets/image_1.png>)
 
-Figure 1‑2 below shows a multi-tasking structure. Because up to 8 tasks can run concurrently, one program (JOB file) can be assigned per task, allowing up to 8 programs (JOB files) to run independently and simultaneously. Running 8 tasks concurrently allows independent control of multiple devices.
+Figure 1‑2 below shows a multi-tasking structure. Because up to 8 tasks can run concurrently, one program (JOB file) can be assigned per task, allowing up to 8 programs (JOB files) to run independently and simultaneously. Running 8 tasks concurrently allows independent control of multiple devices. However, robot control is limited to one robot per main task. To perform synchronized tasks using multiple robots simultaneously, please use our cooperative control system.
 
 ![Figure 1‑2 Multi-tasking structure](<../_assets/image_2.png>)
 
