@@ -1,11 +1,12 @@
 {
-    "langCode": "ko",
-    "series": "Hyundai Robot Hi6 Controller",
+    "langCode": "en",
+    "series": "${cont_model} Controller",
     "title": "Function Manual - Multitasking",
     "publisher": "HD Hyundai Robotics",
     "tocTitle": "Table of Contents",
     "tocTitleElements": "[ \"h1\", \"h2\" ]",
-    "variables": {
-        "cont_model": "Hi6"
-    }
+    "docId": "${cont_model:upper}MULTITASKING_EN_001",
+    "references": [
+        { "rpath" : "doc-hi6-operation/ko-tp630" }
+    ]
 }
