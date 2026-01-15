@@ -59,5 +59,5 @@ task start를 이용하여 생성하고자 하는 서브태스크가 이미 생�
     ```
     task start,sub=1,job=11 # subtask 1 was started
     task start,sub=1,job=12
-    …
+    ...
     ```
