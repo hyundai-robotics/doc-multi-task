@@ -1,1 +1,1 @@
-# 2.4 Subtask destruction
+﻿# 2.4 Subtask destruction

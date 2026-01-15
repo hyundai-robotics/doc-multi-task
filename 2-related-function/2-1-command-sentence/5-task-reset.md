@@ -1,4 +1,4 @@
-# 2.1.5 task reset
+﻿# 2.1.5 task reset
 
 The `task reset` statement forcibly destroys a sub task. Normally a sub task is destroyed automatically when an `end` statement in that sub task program is executed.
 

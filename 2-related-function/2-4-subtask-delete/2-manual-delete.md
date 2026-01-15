@@ -1,4 +1,4 @@
-# 2.4.2 Manual destruction
+﻿# 2.4.2 Manual destruction
 
 You can manually destroy and clear a subtask by selecting the program number `0` in the monitoring window. Procedure:
 

@@ -1,4 +1,4 @@
-# 2.2.1 Monitoring pane
+﻿# 2.2.1 Monitoring pane
 
 From **Window Select** → **Multitasking**, you can view various statuses including the program number assigned to each task.
 

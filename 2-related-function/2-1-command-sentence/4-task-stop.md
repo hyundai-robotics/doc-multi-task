@@ -1,4 +1,4 @@
-# 2.1.4 task stop
+﻿# 2.1.4 task stop
 
 The `task stop` statement forcibly stops execution of a sub task.
 

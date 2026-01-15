@@ -1,4 +1,4 @@
-# 2.1.1 task start
+﻿# 2.1.1 task start
 
 The `task start` statement creates a sub task, assigns a specific job program to it, and starts the sub task program.
 
@@ -44,5 +44,5 @@ If you attempt to create a sub task with `task start` when that sub task is alre
 ```
 task start,sub=1,job=11 # subtask 1 was started
 task start,sub=1,job=12
-…
+...
 ```

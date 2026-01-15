@@ -1,4 +1,4 @@
-# 1.2 Terminology
+﻿# 1.2 Terminology
 
 The terms used in this manual are defined in the table below.
 

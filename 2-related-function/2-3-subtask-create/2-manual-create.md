@@ -1,4 +1,4 @@
-# 2.3.2 Manual creation
+﻿# 2.3.2 Manual creation
 
 This method allows the user to assign and start a program on a desired subtask via teach pendant (TP) operations. The manual creation procedure is as follows:
 
