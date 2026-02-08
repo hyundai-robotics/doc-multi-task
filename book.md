@@ -16,25 +16,25 @@ Figure 1-1 below shows a single-tasking structure. In this case only one task ex
 
 ![Figure 1-1 Single-tasking structure](<../_assets/image_1.png>)
 
-Figure 1‑2 below shows a multi-tasking structure. Because up to 8 tasks can run concurrently, one program (JOB file) can be assigned per task, allowing up to 8 programs (JOB files) to run independently and simultaneously. Running 8 tasks concurrently allows independent control of multiple devices. However, robot control is limited to one robot per main task. To perform synchronized tasks using multiple robots simultaneously, please use our cooperative control system.
+Figure 1-2 below shows a multi-tasking structure. Because up to 8 tasks can run concurrently, one program (JOB file) can be assigned per task, allowing up to 8 programs (JOB files) to run independently and simultaneously. Running 8 tasks concurrently allows independent control of multiple devices. However, robot control is limited to one robot per main task. To perform synchronized tasks using multiple robots simultaneously, please use our cooperative control system.
 
-![Figure 1‑2 Multi-tasking structure](<../_assets/image_2.png>)
+![Figure 1-2 Multi-tasking structure](<../_assets/image_2.png>)
 
 The names of the eight tasks that execute programs are as follows:
 
 * Main task
 * Sub task 1 ~ 7
 
-The main task is always created and present by default to execute JOB programs. Sub tasks can be created and destroyed as needed. Figure 1‑3 below shows the sub task creation structure. Sub tasks are created automatically when the program executes a `task start` statement. Sub tasks are destroyed automatically when a `task reset` statement is executed or when an `end` statement is executed in each sub task program.
+The main task is always created and present by default to execute JOB programs. Sub tasks can be created and destroyed as needed. Figure 1-3 below shows the sub task creation structure. Sub tasks are created automatically when the program executes a `task start` statement. Sub tasks are destroyed automatically when a `task reset` statement is executed or when an `end` statement is executed in each sub task program.
 
-![Figure 1‑3 Sub task creation](<../_assets/image_3.png>)
+![Figure 1-3 Sub task creation](<../_assets/image_3.png>)
 
 [__SOURCE](1-overview/1-2-term-explan.md)
 # 1.2 Terminology
 
 The terms used in this manual are defined in the table below.
 
-<mark style="color:green;">Table 1‑1 Multitask terminology</mark>
+<mark style="color:green;">Table 1-1 Multitask terminology</mark>
 
 | Term | Description |
 | --- | --- |
@@ -85,9 +85,9 @@ task start,sub=<sub_task_number>,job=<program_number>
   </tbody>
 </table>
 
-![Figure 2‑1 Example of using task start](<../../_assets/image_5.png>)
+![Figure 2-1 Example of using task start](<../../_assets/image_5.png>)
 
-![Figure 2‑2 Example of sub task creation and wait for termination](<../../_assets/image_7.png>)
+![Figure 2-2 Example of sub task creation and wait for termination](<../../_assets/image_7.png>)
 
 Note: The sub task number to be created must be a different sub task number than the calling task's own number. Also, `task start` cannot be applied in certain error conditions described below.
 
@@ -245,7 +245,7 @@ This is treated as a discontinuous statement so the step does not perform corner
 
 From **Window Select** → **Multitasking**, you can view various statuses including the program number assigned to each task.
 
-![Figure 2‑4 Multitasking monitoring pane](<../../_assets/image_6.png>)
+![Figure 2-4 Multitasking monitoring pane](<../../_assets/image_6.png>)
 
 
 [__SOURCE](2-related-function/2-2-monitoring/2-title-frame.md)
@@ -271,7 +271,7 @@ This method allows the user to assign and start a program on a desired subtask v
 
 From **Window Select** → **Multitasking**, move the cursor to the desired subtask and choose **Edit** to select a program.
 
-![Figure 2‑5 Manual subtask creation](<../../_assets/image_4.png>)
+![Figure 2-5 Manual subtask creation](<../../_assets/image_4.png>)
 
 [__SOURCE](2-related-function/2-4-subtask-delete/README.md)
 # 2.4 Subtask destruction
@@ -288,7 +288,7 @@ You can manually destroy and clear a subtask by selecting the program number `0`
 
 From **Window Select** → **Multitasking**, move the cursor to the desired subtask and choose **Edit**, then set the program number to `0`.
 
-![Figure 2‑6 Manual subtask destruction](../../_assets/image.png)
+![Figure 2-6 Manual subtask destruction](../../_assets/image.png)
 
 Additionally, executing `task reset` will destroy the associated subtask.
 
@@ -306,7 +306,7 @@ The following operations will destroy all sub tasks:
 Task switching is possible using key operations, as shown in the table below. Task switching is only possible between created tasks. 
 
 
-|            **Operation**            | 　　　**Description**         |
+|            **Operation**            |    **Description**         |
 | :---------------------------------: | ---------------------------- |
 |       \`CTRL`+\`->`key      | Switch to next task          |
 |       \`CTRL`+\`<-`key      | Switch to previous task      |
@@ -327,7 +327,7 @@ Task switching is possible using key operations, as shown in the table below. Ta
 
 Output signal assignments for each task can be made using the following menu selection procedure. This can be done even if no subtasks are currently assigned. 
  
-You can set output signals for each task by using the [Previous task]/[Next task] buttons on the 『F2: System』-> 『2: Control parameter』-> 『2: Input/Output signal setting』-> 『4: Output signal assign』 screen.
+You can set output signals for each task by using the [Previous task]/[Next task] buttons on the `[F2: System] - 2: Control parameter - 2: Input/Output signal setting - 4: Output signal assign` screen.
 
 <br>
 [Main task]
@@ -350,7 +350,7 @@ You can set output signals for each task by using the [Previous task]/[Next task
 When you select a program in the main task, all created subtasks are stopped and destroyed. 
 
 
-|     **Task types**    | 　　 　　**Action content**                                 |
+|     **Task types**    |      **Action content**                                 |
 | :-------------------: | ---------------------------------------------------------- |
 |       Maintask        | Change program number <br> Clear step and function number  |
 |       Subtask         | Clear program number <br> Clear step and function number   |
@@ -361,7 +361,7 @@ When you select a program in the main task, all created subtasks are stopped and
 When selecting a program in a subtask, only the program in that subtask is newly selected.
 
 
-|     **Task types**    | 　　 　　**Action content**                                |
+|     **Task types**    |      **Action content**                                |
 | :-------------------: | --------------------------------------------------------- |
 |       Maintask        | No change                                                 |
 |       Subtask         | Change program number <br> Clear step and function number |
@@ -373,13 +373,13 @@ To step forward or backward all created tasks simultaneously, or only the curren
 
 | **Action** | **Description** |
 | :--------: | --------------- |
-| [**FWD**]/[**BWD**] key | Step forward/backward for all created tasks simultaneously |
-| [**CTRL**]+[**FWD**]/[**BWD**] key | Step forward/backward for the currently selected task only |
+| `[FWD]`/`[BWD]` key | Step forward/backward for all created tasks simultaneously |
+| `[CTRL]`+`[FWD]`/`[BWD]` key | Step forward/backward for the currently selected task only |
 
 [__SOURCE](2-related-function/2-8-start.md)
 # 2.8 Start
 
-To start a task, in AUTO mode enable **MOTOR ON** and **START**, or in MANUAL mode enable **MOTOR ON** and press the [**FWD**] key. Alternatively, subtasks can be started by executing statements independently or by using external signals in conjunction with script commands.
+To start a task, in AUTO mode enable **MOTOR ON** and **START**, or in MANUAL mode enable **MOTOR ON** and press the `[FWD]` key. Alternatively, subtasks can be started by executing statements independently or by using external signals in conjunction with script commands.
 
 [__SOURCE](2-related-function/2-9-stop.md)
 # 2.9 Stop

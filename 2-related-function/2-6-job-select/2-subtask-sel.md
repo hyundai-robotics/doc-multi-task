@@ -3,7 +3,7 @@
 When selecting a program in a subtask, only the program in that subtask is newly selected.
 
 
-|     **Task types**    | 　　 　　**Action content**                                |
+|     **Task types**    |      **Action content**                                |
 | :-------------------: | --------------------------------------------------------- |
 |       Maintask        | No change                                                 |
 |       Subtask         | Change program number <br> Clear step and function number |

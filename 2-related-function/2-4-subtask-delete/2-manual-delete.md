@@ -4,7 +4,7 @@ You can manually destroy and clear a subtask by selecting the program number `0`
 
 From **Window Select** → **Multitasking**, move the cursor to the desired subtask and choose **Edit**, then set the program number to `0`.
 
-![Figure 2‑6 Manual subtask destruction](../../_assets/image.png)
+![Figure 2-6 Manual subtask destruction](../../_assets/image.png)
 
 Additionally, executing `task reset` will destroy the associated subtask.
 

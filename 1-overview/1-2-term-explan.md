@@ -2,7 +2,7 @@
 
 The terms used in this manual are defined in the table below.
 
-<mark style="color:green;">Table 1‑1 Multitask terminology</mark>
+<mark style="color:green;">Table 1-1 Multitask terminology</mark>
 
 | Term | Description |
 | --- | --- |

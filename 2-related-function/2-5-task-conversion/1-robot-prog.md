@@ -3,7 +3,7 @@
 Task switching is possible using key operations, as shown in the table below. Task switching is only possible between created tasks. 
 
 
-|            **Operation**            | 　　　**Description**         |
+|            **Operation**            |    **Description**         |
 | :---------------------------------: | ---------------------------- |
 |       \`CTRL`+\`->`key      | Switch to next task          |
 |       \`CTRL`+\`<-`key      | Switch to previous task      |

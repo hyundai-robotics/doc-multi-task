@@ -4,5 +4,5 @@ To step forward or backward all created tasks simultaneously, or only the curren
 
 | **Action** | **Description** |
 | :--------: | --------------- |
-| [**FWD**]/[**BWD**] key | Step forward/backward for all created tasks simultaneously |
-| [**CTRL**]+[**FWD**]/[**BWD**] key | Step forward/backward for the currently selected task only |
+| `[FWD]`/`[BWD]` key | Step forward/backward for all created tasks simultaneously |
+| `[CTRL]`+`[FWD]`/`[BWD]` key | Step forward/backward for the currently selected task only |

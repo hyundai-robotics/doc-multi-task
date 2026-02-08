@@ -31,9 +31,9 @@ task start,sub=<sub_task_number>,job=<program_number>
   </tbody>
 </table>
 
-![Figure 2‑1 Example of using task start](<../../_assets/image_5.png>)
+![Figure 2-1 Example of using task start](<../../_assets/image_5.png>)
 
-![Figure 2‑2 Example of sub task creation and wait for termination](<../../_assets/image_7.png>)
+![Figure 2-2 Example of sub task creation and wait for termination](<../../_assets/image_7.png>)
 
 Note: The sub task number to be created must be a different sub task number than the calling task's own number. Also, `task start` cannot be applied in certain error conditions described below.
 
