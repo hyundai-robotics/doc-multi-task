@@ -2,6 +2,11 @@
 [__SOURCE](README.md)
 # ${cont_model} 제어기 기능설명서 - 멀티태스킹
 
+[__SOURCE](0-about-this-manual/precautions.md)
+# 사전 주의사항
+
+{% include url="https://hrcontentsrelay-bmgae5hdbzapc4bc.koreacentral-01.azurewebsites.net/api/proxy?path=doc-common-pages/ko/precautions.md" %}
+
 [__SOURCE](1-overview/README.md)
 # 1. 개요
 
@@ -368,8 +373,8 @@ axisctrl <on/off>,a=[부가축 번호,부가축 번호,...] : 복수지정 가�
 
 |               **동작**             |      **내용**         |
 | :--------------------------------: | ------------------------ |
-|       \`CTRL`+\`->`키      | 다음 태스크로 전환         |
-|       \`CTRL`+\`<-`키      | 이전 태스크로 전환         |
+|       `CTRL`+`->`키      | 다음 태스크로 전환         |
+|       `CTRL`+`<-`키      | 이전 태스크로 전환         |
 
 <br>
 [메인 태스크]
@@ -433,13 +438,13 @@ axisctrl <on/off>,a=[부가축 번호,부가축 번호,...] : 복수지정 가�
 
 |               **동작**               |           **내용**       |
 | :--------------------------------: | ---------------------- |
-|       \`FWD`/\`BWD`키       | 생성된 모든 태스크 동시에 전/후진 실행 |
-| \`CTRL`+\`FWD`/\`BWD`키 | 현재 선택된 태스크만 전/후진 실행    |
+|       `FWD`/`BWD`키       | 생성된 모든 태스크 동시에 전/후진 실행 |
+| `CTRL`+`FWD`/`BWD`키 | 현재 선택된 태스크만 전/후진 실행    |
 
 [__SOURCE](2-related-function/2-8-start.md)
 # 2.8 기동 처리
 
-태스크를 실행하려면 자동모드에서 '**MOTOR ON**', '**START**'를 활성화하거나 수동모드에서 '**MOTOR ON**'을 활성화 시키고 \`FWD` 키를 선택하면 됩니다. 이외에 명령문 독립실행을 통해서 외부 신호와 연계해 서브태스크를 실행할 수도 있습니다.
+태스크를 실행하려면 자동모드에서 '**MOTOR ON**', '**START**'를 활성화하거나 수동모드에서 '**MOTOR ON**'을 활성화 시키고 	`FWD` 키를 선택하면 됩니다. 이외에 명령문 독립실행을 통해서 외부 신호와 연계해 서브태스크를 실행할 수도 있습니다.
 
 [__SOURCE](2-related-function/2-9-stop.md)
 # 2.9 정지 처리
