@@ -1,6 +1,7 @@
 ﻿# Table of contents
 
 * [${cont_model} Controller Manual - Multi-tasking](README.md)
+* [Precautions](0-about-this-manual/precautions.md)
 * [1. Overview](1-overview/README.md)
   * [1.1 About multi-tasking features](1-overview/1-1-about-multi-task.md)
   * [1.2 Terminology](1-overview/1-2-term-explan.md)
