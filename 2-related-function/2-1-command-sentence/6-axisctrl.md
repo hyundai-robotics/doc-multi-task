@@ -1,4 +1,4 @@
-﻿# 2.1.6 axisctrl
+﻿# 2.1.6 `axisctrl`
 
 The `axisctrl` statement specifies whether auxiliary axes should move together with the robot to the target position when a `move` statement is executed.
 

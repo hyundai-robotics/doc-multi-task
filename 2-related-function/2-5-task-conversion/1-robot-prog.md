@@ -5,8 +5,8 @@ Task switching is possible using key operations, as shown in the table below. Ta
 
 |            **Operation**            |    **Description**         |
 | :---------------------------------: | ---------------------------- |
-|       \`CTRL`+\`->`key      | Switch to next task          |
-|       \`CTRL`+\`<-`key      | Switch to previous task      |
+|       `[CTRL]+[->]` key      | Switch to next task          |
+|       `[CTRL]+[<-]` key      | Switch to previous task      |
 
 <br>
 [Maintask]

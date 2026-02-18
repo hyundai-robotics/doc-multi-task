@@ -1,4 +1,4 @@
-﻿# 2.1.2 task wait
+﻿# 2.1.2 `task wait`
 
 The `task wait` statement waits for a sub task to be destroyed. Normally a sub task is destroyed automatically when an `end` statement in that sub task program is executed. Use this when you want to wait for another sub task to finish before continuing work.
 

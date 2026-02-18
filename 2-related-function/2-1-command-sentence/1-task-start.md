@@ -1,8 +1,8 @@
-﻿# 2.1.1 task start
+﻿# 2.1.1 `task start`
 
 The `task start` statement creates a sub task, assigns a specific job program to it, and starts the sub task program.
 
-The `task start` statement can be entered from **Command Input** → **Other** → **Task**.
+The `task start` statement can be entered from `[Command Input] - [Other] - [Task]`.
 
 ```
 task start,sub=<sub_task_number>,job=<program_number>
@@ -39,7 +39,7 @@ Note: The sub task number to be created must be a different sub task number than
 
 If you attempt to create a sub task with `task start` when that sub task is already created and running, assigning another program to that sub task will result in an error. See the example below.
 
-* <mark style="color:green;">**Error when assigning and starting another program on a running sub task**</mark>
+* <mark style="color:green;">`Error when assigning and starting another program on a running sub task`</mark>
 
 ```
 task start,sub=1,job=11 # subtask 1 was started

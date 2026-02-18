@@ -1,4 +1,4 @@
-﻿# 2.1.3 task sync
+﻿# 2.1.3 `task sync`
 
 The `task sync` statement synchronizes tasks. When two or more robots must cooperate, synchronization is essential; `task sync` is useful to align the start points among tasks. It is handy when the main task and sub tasks need to perform work and then start a step simultaneously at a specific point.
 
