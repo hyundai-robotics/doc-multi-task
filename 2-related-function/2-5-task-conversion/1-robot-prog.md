@@ -1,20 +1,19 @@
-﻿# 2.5.1 Robot program
+﻿# 2.5.1 机器人程序
 
-Task switching is possible using key operations, as shown in the table below. Task switching is only possible between created tasks. 
+可以使用下面表中所示的键操作进行任务切换。任务切换仅在创建的任务之间可能。
 
-
-|            **Operation**            |    **Description**         |
-| :---------------------------------: | ---------------------------- |
-|       `[CTRL]+[->]` key      | Switch to next task          |
-|       `[CTRL]+[<-]` key      | Switch to previous task      |
+|            **操作**            |    **描述**         |
+| :----------------------------: | ------------------ |
+|       `[CTRL]+[->]` 键      | 切换到下一个任务      |
+|       `[CTRL]+[<-]` 键      | 切换到上一个任务      |
 
 <br>
-[Maintask]
+[主任务]
 
 ![](<../../_assets/image_9.png>)
 
 <br>
 
-[Subtask 1]
+[子任务 1]
 
 ![](<../../_assets/image_10.png>)

@@ -1,13 +1,13 @@
-﻿# 2.4.2 Manual destruction
+﻿# 2.4.2 手动销毁
 
-You can manually destroy and clear a subtask by selecting the program number `0` in the monitoring window. Procedure:
+您可以通过在监视窗口中选择程序编号 `0` 来手动销毁和清除子任务。程序步骤：
 
-From **Window Select** → **Multitasking**, move the cursor to the desired subtask and choose **Edit**, then set the program number to `0`.
+从 **窗口选择** → **多任务处理**，将光标移动到所需的子任务，然后选择 **编辑**，接着将程序编号设置为 `0`。
 
-![Figure 2-6 Manual subtask destruction](../../_assets/image.png)
+![图 2-6 手动子任务销毁](../../_assets/image.png)
 
-Additionally, executing `task reset` will destroy the associated subtask.
+此外，执行 `task reset` 将销毁相关的子任务。
 
-The following operations will destroy all sub tasks:
-- Re-selecting the main taskprogram in MANUAL mode
-- Executing `*R0 : Task Reset*` in MANUAL mode
+以下操作将销毁所有子任务：
+- 在手动模式下重新选择主任务程序
+- 在手动模式下执行 `*R0 : 任务重置*`

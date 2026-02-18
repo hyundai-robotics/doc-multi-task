@@ -1,7 +1,7 @@
-﻿# 2.3.2 Manual creation
+﻿# 2.3.2 手动创建
 
-This method allows the user to assign and start a program on a desired subtask via teach pendant (TP) operations. The manual creation procedure is as follows:
+此方法允许用户通过教学挂件（TP）操作在所需的子任务上分配和启动程序。手动创建程序的步骤如下：
 
-From **Window Select** → **Multitasking**, move the cursor to the desired subtask and choose **Edit** to select a program.
+从 **窗口选择** → **多任务处理**，将光标移动到所需的子任务并选择 **编辑** 以选择程序。
 
-![Figure 2-5 Manual subtask creation](<../../_assets/image_4.png>)
+![图 2-5 手动子任务创建](<../../_assets/image_4.png>)

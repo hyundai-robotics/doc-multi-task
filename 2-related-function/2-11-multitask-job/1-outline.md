@@ -1,13 +1,13 @@
-﻿# 2.11.1 Outline
+﻿# 2.11.1 概述
 
-Applying the multitasking feature allows you to create an independent program that runs the program controlling the additional axis in a subtask.
+应用多任务特性允许您创建一个独立程序，在子任务中运行控制附加轴的程序。
 
-As shown in the figure below, you can drive additional axes independently in each subtask by specifying a set of mechanisms that do not overlap each other.
-![Mechanism set config.](<../../_assets/image_13.png>)
+如下图所示，您可以通过指定一组不重叠的机制，在每个子任务中独立驱动附加轴。
+![机制集配置。](<../../_assets/image_13.png>)
 
-The main task can control both the robot and the assigned additional axes, but the subtask can only control the assigned additional axes.
+主任务可以控制机器人和指定的附加轴，但子任务只能控制指定的附加轴。
 
-To use this feature, you need a mechanism set (mechset), mechanism setting, and the axisctrl command. A brief definition is below.
-- Mechanism setting : It is composed of a set of axes (robot axes, additional axes), and one mechanism can be selected with a jog to operate it as a mechanism unit. "[${cont_model}  Robot Controller Operation Manual - Mechanism Setting](https://hrbook-hrc.web.app/#/view/doc-hi6-operation/en-${cont_model}-tp630/7-system/6-initialization/6-mechannism-set?cont_model=${cont_model}) 
-- Mechanism set : The difference between the optional combination of mechanisms and the mechanism is that the steps in the work program are recorded when they are recorded.  "[${cont_model} Robot Controller Operation Manual - Recording Condition](https://hrbook-hrc.web.app/#/view/doc-hi6-operation/en-${cont_model}-tp630/3-programming/2-prog-edit/2-statement-input/3-rec-cond?cont_model=${cont_model})"
-- axisctrl : This is a command regarding the control settings of the additional axis. "[2.1.6 axisctrl](../../2-related-function/2-1-command-sentence/6-axisctrl.md?cont_model=${cont_model})"
+要使用此功能，您需要一个机制集（mechset）、机制设置和 axisctrl 命令。以下是简要定义。
+- 机制设置：由一组轴（机器人轴，附加轴）组成，可以通过 jog 选择一个机制作为机制单元进行操作。 "[${cont_model} 机器人控制器操作手册 - 机制设置](https://hrbook-hrc.web.app/#/view/doc-hi6-operation/en-${cont_model}-tp630/7-system/6-initialization/6-mechannism-set?cont_model=${cont_model}) 
+- 机制集：可选机制组合与机制的区别在于，当录制工作程序时步骤会被记录。 "[${cont_model} 机器人控制器操作手册 - 录制条件](https://hrbook-hrc.web.app/#/view/doc-hi6-operation/en-${cont_model}-tp630/3-programming/2-prog-edit/2-statement-input/3-rec-cond?cont_model=${cont_model})"
+- axisctrl：这是关于附加轴控制设置的命令。 "[2.1.6 axisctrl](../../2-related-function/2-1-command-sentence/6-axisctrl.md?cont_model=${cont_model})"

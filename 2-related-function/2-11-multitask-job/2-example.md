@@ -1,17 +1,16 @@
-﻿# 2.11.2 Example
+﻿# 2.11.2 示例
 
-Let's illustrate a simple example of a multitasking task performed by a system consisting of a robot and a stationary gun, as shown in the figure below. <br>
+让我们用一个简单的例子来说明一个由机器人和固定枪组成的系统执行的多任务任务， 如下图所示。 <br>
 
 ![](<../../_assets/image_14.png>)
 <br>
 
-Here, the robot can be divided into two cases: a task in which the robot performs spot welding with a stationary gun, and a task in which the stationary gun performs tip dressing and gun search (measuring tip wear) separately from the robot's movements. The structure of the composed work program is as shown in the figure below. <br>
+在这里，机器人可以分为两种情况：一种是机器人用固定枪进行点焊的任务，另一种是固定枪执行尖端修整和枪搜索（测量尖端磨损），与机器人的运动分开。组合工作程序的结构如下图所示。 <br>
 
 ![](<../../_assets/image_15.png>)
 
-- 0001.job running in the main task can be programmed to drive all axes by selecting mechanism set 0, and when the program is run, it sequentially executes move and spot to perform spot welding. 
-- After that, if you execute the axisctrl off command in the main program, the specified axis number will be set to be controlled by the subtask. This way, the main task will not move to the target where the stationary gun is recorded.
-- Use the task start command to specify a program to be executed in a subtask. The program assigned to a subtask must be configured as a separate mechanism set. The task start command executes 0064.job to be executed independently from 0001.job in the main task.
-- When the main task program encounters the task wait command, it waits until the specified subtask is completed and end is executed.
-- The main program then executes the axisctrl on command to take control of the additional axes. Afterwards, you can program all axes to be driven by selecting mechanism set 0.
-
+- 在主任务中运行的0001.job可以通过选择机制集0来编程驱动所有轴，当程序运行时，它依次执行移动和点焊以进行点焊。
+- 之后，如果在主程序中执行axisctrl off命令，则指定的轴号将被设置为由子任务控制。这样，主任务就不会移动到记录有固定枪的目标位置。
+- 使用任务开始命令来指定要在子任务中执行的程序。分配给子任务的程序必须配置为单独的机制集。任务开始命令执行0064.job，以便独立于主任务中的0001.job执行。
+- 当主任务程序遇到任务等待命令时，它将等待指定的子任务完成并执行结束。
+- 然后，主程序执行axisctrl on命令来控制附加轴。之后，您可以通过选择机制集0来编程驱动所有轴。

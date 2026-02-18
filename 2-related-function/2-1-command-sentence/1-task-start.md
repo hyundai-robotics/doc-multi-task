@@ -1,8 +1,8 @@
 ﻿# 2.1.1 `task start`
 
-The `task start` statement creates a sub task, assigns a specific job program to it, and starts the sub task program.
+`task start` 语句创建一个子任务，分配一个特定的作业程序给它，并启动子任务程序。
 
-The `task start` statement can be entered from `[Command Input] - [Other] - [Task]`.
+`task start` 语句可以从 `[Command Input] - [Other] - [Task]` 输入。
 
 ```
 task start,sub=<sub_task_number>,job=<program_number>
@@ -11,38 +11,38 @@ task start,sub=<sub_task_number>,job=<program_number>
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">Item</th>
-      <th style="text-align:left">Description</th>
+      <th style="text-align:left">项目</th>
+      <th style="text-align:left">描述</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left">Sub task number</td>
-      <td style="text-align:left">Specify the sub task number to create (0 ~ 7).<br>(If set to 0, an unused task is selected automatically and used.)</td>
+      <td style="text-align:left">子任务编号</td>
+      <td style="text-align:left">指定要创建的子任务编号 (0 ~ 7)。<br>(如果设为 0，则会自动选择一个未使用的任务并使用。)</td>
     </tr>
     <tr>
-      <td style="text-align:left">Program number</td>
-      <td style="text-align:left">Specify the program to run in the created sub task (1 ~ 9999).</td>
+      <td style="text-align:left">程序编号</td>
+      <td style="text-align:left">指定在创建的子任务中运行的程序 (1 ~ 9999)。</td>
     </tr>
     <tr>
-      <td style="text-align:left">Usage examples</td>
-      <td style="text-align:left">task start,sub=1,job=11 (assign and run 0011.job on sub task 1)<br>task start,sub=0,job=11 (automatically select a sub task and run 0011.job)</td>
+      <td style="text-align:left">使用示例</td>
+      <td style="text-align:left">task start,sub=1,job=11 (在子任务 1 中分配并运行 0011.job)<br>task start,sub=0,job=11 (自动选择一个子任务并运行 0011.job)</td>
     </tr>
   </tbody>
 </table>
 
-![Figure 2-1 Example of using task start](<../../_assets/image_5.png>)
+![Figure 2-1 使用 task start 的示例](<../../_assets/image_5.png>)
 
-![Figure 2-2 Example of sub task creation and wait for termination](<../../_assets/image_7.png>)
+![Figure 2-2 子任务创建和等待终止的示例](<../../_assets/image_7.png>)
 
-Note: The sub task number to be created must be a different sub task number than the calling task's own number. Also, `task start` cannot be applied in certain error conditions described below.
+注意：要创建的子任务编号必须与调用任务的自身编号不同。此外，`task start` 不能在以下描述的某些错误条件下应用。
 
-If you attempt to create a sub task with `task start` when that sub task is already created and running, assigning another program to that sub task will result in an error. See the example below.
+如果尝试在已经创建并运行的子任务上使用 `task start` 创建子任务，并分配另一个程序给该子任务，将导致错误。请参见下面的示例。
 
-* <mark style="color:green;">`Error when assigning and starting another program on a running sub task`</mark>
+* <mark style="color:green;">`在运行的子任务上分配和启动另一个程序时出错`</mark>
 
 ```
-task start,sub=1,job=11 # subtask 1 was started
+task start,sub=1,job=11 # 子任务 1 已启动
 task start,sub=1,job=12
 ...
 ```

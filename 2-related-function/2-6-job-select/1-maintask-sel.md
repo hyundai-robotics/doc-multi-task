@@ -1,9 +1,9 @@
-﻿# 2.6.1 Select from maintask
+﻿# 2.6.1 从主要任务中选择
 
-When you select a program in the main task, all created subtasks are stopped and destroyed. 
+当您在主任务中选择程序时，所有创建的子任务都会停止并被销毁。
 
 
-|     **Task types**    |      **Action content**                                 |
+|     **任务类型**    |      **操作内容**                                 |
 | :-------------------: | ---------------------------------------------------------- |
-|       Maintask        | Change program number <br> Clear step and function number  |
-|       Subtask         | Clear program number <br> Clear step and function number   |
+|       主要任务        | 更改程序编号 <br> 清除步骤和功能编号  |
+|       子任务         | 清除程序编号 <br> 清除步骤和功能编号   |
