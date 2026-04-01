@@ -5,7 +5,7 @@
 [__SOURCE](0-about-this-manual/precautions.md)
 # Precautions
 
-{% include url="https://hrcontentsrelay-bmgae5hdbzapc4bc.koreacentral-01.azurewebsites.net/api/proxy?path=doc-common-pages/en/precautions.md" %}
+{% include file="en/precautions.md" %}
 
 [__SOURCE](1-overview/README.md)
 # 1. Overview
@@ -44,11 +44,8 @@ The terms used in this manual are defined in the table below.
 | Term | Description |
 | --- | --- |
 | Program (job file) | - A job program stored in the controller's non-volatile memory (e.g., 0001.job, 0002.job, 1001.job, etc.). |
-| Main task (Main task) / Sub task 1 ~ 7 (Sub task 1 ~ 7) | - The robot controller's program executor that can load and run job programs.
-- There are 8 tasks in total; each task can load and run only one program at a time. |
-| Main task program / Sub task program | - The specific job program assigned to a task.
-- (Example: If the main task loads 0001.job, the main task program is 0001.job.)
-- A program can be executed only when it is assigned to either the main task or a sub task. |
+| Main task<br>Sub task 1 ~ 7 | -The robot controller's program executor that can load and run job programs.<br>-There are 8 tasks in total; each task can load and run only one program at a time. |
+| Main task program<br>Sub task program | -The specific job program assigned to a task.<br>(Example: If the main task loads 0001.job, the main task program is 0001.job.)<br>-A program can be executed only when it is assigned to either the main task or a sub task. |
 
 [__SOURCE](2-related-function/README.md)
 # 2. Related functions
@@ -57,11 +54,11 @@ The terms used in this manual are defined in the table below.
 # 2.1 Command statements
 
 [__SOURCE](2-related-function/2-1-command-sentence/1-task-start.md)
-# 2.1.1 task start
+# 2.1.1 `task start`
 
 The `task start` statement creates a sub task, assigns a specific job program to it, and starts the sub task program.
 
-The `task start` statement can be entered from **Command Input** → **Other** → **Task**.
+The `task start` statement can be entered from `[Command Input] - [Other] - [Task]`.
 
 ```
 task start,sub=<sub_task_number>,job=<program_number>
@@ -98,7 +95,7 @@ Note: The sub task number to be created must be a different sub task number than
 
 If you attempt to create a sub task with `task start` when that sub task is already created and running, assigning another program to that sub task will result in an error. See the example below.
 
-* <mark style="color:green;">**Error when assigning and starting another program on a running sub task**</mark>
+* <mark style="color:green;">`Error when assigning and starting another program on a running sub task`</mark>
 
 ```
 task start,sub=1,job=11 # subtask 1 was started
@@ -107,7 +104,7 @@ task start,sub=1,job=12
 ```
 
 [__SOURCE](2-related-function/2-1-command-sentence/2-task-wait.md)
-# 2.1.2 task wait
+# 2.1.2 `task wait`
 
 The `task wait` statement waits for a sub task to be destroyed. Normally a sub task is destroyed automatically when an `end` statement in that sub task program is executed. Use this when you want to wait for another sub task to finish before continuing work.
 
@@ -139,7 +136,7 @@ task wait,sub=<sub_task_number>,job=<program_number>
 </table>
 
 [__SOURCE](2-related-function/2-1-command-sentence/3-task-sync.md)
-# 2.1.3 task sync
+# 2.1.3 `task sync`
 
 The `task sync` statement synchronizes tasks. When two or more robots must cooperate, synchronization is essential; `task sync` is useful to align the start points among tasks. It is handy when the main task and sub tasks need to perform work and then start a step simultaneously at a specific point.
 
@@ -155,7 +152,7 @@ task sync,id=<identifier>,no=<number_of_tasks_to_sync>
 | | <p># Sub task 1 program</p><p>print "subtask 1"</p><p>...</p><p><mark style="background-color:green;">task sync,id=1,no=2</mark></p><p>print "sync with maintask"</p><p>(id=1, number of tasks to sync = 2)</p> |
 
 [__SOURCE](2-related-function/2-1-command-sentence/4-task-stop.md)
-# 2.1.4 task stop
+# 2.1.4 `task stop`
 
 The `task stop` statement forcibly stops execution of a sub task.
 
@@ -187,7 +184,7 @@ task stop,sub=<sub_task_number>,job=<program_number>
 </table>
 
 [__SOURCE](2-related-function/2-1-command-sentence/5-task-reset.md)
-# 2.1.5 task reset
+# 2.1.5 `task reset`
 
 The `task reset` statement forcibly destroys a sub task. Normally a sub task is destroyed automatically when an `end` statement in that sub task program is executed.
 
@@ -219,7 +216,7 @@ task reset,sub=<sub_task_number>,job=<program_number>
 </table>
 
 [__SOURCE](2-related-function/2-1-command-sentence/6-axisctrl.md)
-# 2.1.6 axisctrl
+# 2.1.6 `axisctrl`
 
 The `axisctrl` statement specifies whether auxiliary axes should move together with the robot to the target position when a `move` statement is executed.
 
@@ -313,8 +310,8 @@ Task switching is possible using key operations, as shown in the table below. Ta
 
 |            **Operation**            |    **Description**         |
 | :---------------------------------: | ---------------------------- |
-|       \`CTRL`+\`->`key      | Switch to next task          |
-|       \`CTRL`+\`<-`key      | Switch to previous task      |
+|       `[CTRL]+[->]` key      | Switch to next task          |
+|       `[CTRL]+[<-]` key      | Switch to previous task      |
 
 <br>
 [Maintask]
@@ -384,12 +381,12 @@ To step forward or backward all created tasks simultaneously, or only the curren
 [__SOURCE](2-related-function/2-8-start.md)
 # 2.8 Start
 
-To start a task, in AUTO mode enable **MOTOR ON** and **START**, or in MANUAL mode enable **MOTOR ON** and press the `[FWD]` key. Alternatively, subtasks can be started by executing statements independently or by using external signals in conjunction with script commands.
+To start a task, in AUTO mode enable `MOTOR ON` and `START`, or in MANUAL mode enable `MOTOR ON` and press the `[FWD]` key. Alternatively, subtasks can be started by executing statements independently or by using external signals in conjunction with script commands.
 
 [__SOURCE](2-related-function/2-9-stop.md)
 # 2.9 Stop
 
-If the stop button on the teach pendant is pressed or an external stop signal is input during multi-task operation, all tasks will stop.
+If the `stop` button on the teach pendant is pressed or an external stop signal is input during multi-task operation, all tasks will stop.
 
 In addition, executing the `task stop` statement stops the corresponding subtask.
 
@@ -418,8 +415,8 @@ As shown in the figure below, you can drive additional axes independently in eac
 The main task can control both the robot and the assigned additional axes, but the subtask can only control the assigned additional axes.
 
 To use this feature, you need a mechanism set (mechset), mechanism setting, and the axisctrl command. A brief definition is below.
-- Mechanism setting : It is composed of a set of axes (robot axes, additional axes), and one mechanism can be selected with a jog to operate it as a mechanism unit. "[${cont_model}  Robot Controller Operation Manual - Mechanism Setting](https://hrbook-hrc.web.app/#/view/doc-hi6-operation/en-${cont_model}-tp630/7-system/6-initialization/6-mechannism-set?cont_model=${cont_model}) 
-- Mechanism set : The difference between the optional combination of mechanisms and the mechanism is that the steps in the work program are recorded when they are recorded.  "[${cont_model} Robot Controller Operation Manual - Recording Condition](https://hrbook-hrc.web.app/#/view/doc-hi6-operation/en-${cont_model}-tp630/3-programming/2-prog-edit/2-statement-input/3-rec-cond?cont_model=${cont_model})"
+- Mechanism setting : It is composed of a set of axes (robot axes, additional axes), and one mechanism can be selected with a jog to operate it as a mechanism unit. "[${cont_model}  Robot Controller Operation Manual - Mechanism Setting](https://hrbook-hrc.web.app/#/view/doc-hi6-operation/en-tp630/7-system/6-initialization/6-mechannism-set?cont_model=${cont_model}) 
+- Mechanism set : The difference between the optional combination of mechanisms and the mechanism is that the steps in the work program are recorded when they are recorded.  "[${cont_model} Robot Controller Operation Manual - Recording Condition](https://hrbook-hrc.web.app/#/view/doc-hi6-operation/en-tp630/3-programming/2-prog-edit/2-statement-input/3-rec-cond?cont_model=${cont_model})"
 - axisctrl : This is a command regarding the control settings of the additional axis. "[2.1.6 axisctrl](../../2-related-function/2-1-command-sentence/6-axisctrl.md?cont_model=${cont_model})"
 
 [__SOURCE](2-related-function/2-11-multitask-job/2-example.md)
