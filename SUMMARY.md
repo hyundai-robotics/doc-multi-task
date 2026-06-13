@@ -1,7 +1,9 @@
 ﻿# Table of contents
 
 * [${cont_model} 控制器手册 - 多任务处理](README.md)
-* [注意事项](0-about-this-manual/precautions.md)
+* [关于手册](0-about-this-manual/README.md)
+  * [注意事项](0-about-this-manual/precautions.md)
+  * [安全注意事项](0-about-this-manual/safety-notice.md)
 * [1. 概述](1-overview/README.md)
   * [1.1 关于多任务功能](1-overview/1-1-about-multi-task.md)
   * [1.2 术语](1-overview/1-2-term-explan.md)
