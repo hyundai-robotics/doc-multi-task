@@ -1,7 +1,9 @@
 ﻿# Table of contents
 
 * [${cont_model} 제어기 기능설명서 - 멀티태스킹](README.md)
-* [사전 주의사항](0-about-this-manual/precautions.md)
+* [이 설명서에 대하여](0-about-this-manual/README.md)
+  * [사전 주의사항](0-about-this-manual/precautions.md)
+  * [안전 주의 사항](0-about-this-manual/safety-notice.md)
 * [1. 개요](1-overview/README.md)
   * [1.1 멀티태스킹 기능에 대하여](1-overview/1-1-about-multi-task.md)
   * [1.2 용어 설명](1-overview/1-2-term-explan.md)

@@ -2,10 +2,19 @@
 [__SOURCE](README.md)
 # ${cont_model} 제어기 기능설명서 - 멀티태스킹
 
+[__SOURCE](0-about-this-manual/README.md)
+# 이 설명서에 대하여
+
+
 [__SOURCE](0-about-this-manual/precautions.md)
 # 사전 주의사항
 
-{% include url="https://hrcontentsrelay-bmgae5hdbzapc4bc.koreacentral-01.azurewebsites.net/api/proxy?path=doc-common-pages/ko/precautions.md" %}
+{% include file="ko/precautions.md" %}
+
+[__SOURCE](0-about-this-manual/safety-notice.md)
+# 안전 주의 사항
+
+{% include file="ko/safety-notice.md" %}
 
 [__SOURCE](1-overview/README.md)
 # 1. 개요
@@ -470,8 +479,7 @@ axisctrl <on/off>,a=[부가축 번호,부가축 번호,...] : 복수지정 가�
 [__SOURCE](2-related-function/2-11-multitask-job/1-outline.md)
 # 2.11.1 개요
 
-멀티태스킹 기능을 응용하면 부가축을 제어하는 프로그램을 서브태스크에서 실행하는 독립적
-인 프로그램을 구성할 수 있습니다. 
+멀티태스킹 기능을 응용하면 부가축을 제어하는 프로그램을 서브태스크에서 실행하는 독립적인 프로그램을 구성할 수 있습니다. 
 
 아래의 그림과 같이 메커니즘 세트를 서로 겹치지 않게 지정하여 각 서브태스크에서 독립적으로 부가축을 구동할 수 있습니다. 
 ![메커니즘 세트 구성](<../../_assets/image_13.png>)
@@ -480,9 +488,9 @@ axisctrl <on/off>,a=[부가축 번호,부가축 번호,...] : 복수지정 가�
 
 본 기능을 사용하기 위해서는 메커니즘 세트(mechset), 매커니즘의 설정, axisctrl 명령의 사용이 
 필요합니다. 간략한 정의는 아래와 같습니다. 
-- 매커니즘 : 축의 조합(로봇축, 부가축)을 세트로 구성한 것으로 조그로 하나의 매커니즘을 선택해서 매커니즘 단위로 조작이 가능합니다. "[${cont_model} 제어기 조작설명서 - 메커니즘 설정](https://hrbook-hrc.web.app/#/view/doc-hi6-operation/ko-${cont_model}-tp630/7-system/6-initialization/6-mechannism-set?cont_model=${cont_model}) 
+- 매커니즘 : 축의 조합(로봇축, 부가축)을 세트로 구성한 것으로 조그로 하나의 매커니즘을 선택해서 매커니즘 단위로 조작이 가능합니다. "[${cont_model} 제어기 조작설명서 - 메커니즘 설정](https://hrbook-hrc.web.app/#/view/doc-hi6-operation/ko-tp630/7-system/6-initialization/6-mechannism-set?cont_model=${cont_model})
 - 메커니즘 세트 : 매커니즘의 선택적 조합으로 매커니즘과의 차이는 작업 프로그램에서 스텝을 기
-록할 때 기록이 되는 점입니다.  "[${cont_model} 제어기 조작설명서 - 기록 조건](https://hrbook-hrc.web.app/#/view/doc-hi6-operation/ko-${cont_model}-tp630/3-programming/2-prog-edit/2-statement-input/3-rec-cond?cont_model=${cont_model})"
+록할 때 기록이 되는 점입니다.  "[${cont_model} 제어기 조작설명서 - 기록 조건](https://hrbook-hrc.web.app/#/view/doc-hi6-operation/ko-tp630/3-programming/2-prog-edit/2-statement-input/3-rec-cond?cont_model=${cont_model})"
 - axisctrl : 부가축의 제어 설정에 관한 명령문입니다. "[2.1.6 axisctrl](../../2-related-function/2-1-command-sentence/6-axisctrl.md)" 
 
 
