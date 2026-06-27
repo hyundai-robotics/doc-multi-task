@@ -1,8 +1,8 @@
-﻿# 2.7 Step forward/backward
+﻿# 2.7 向前/向后步骤
 
-To step forward or backward all created tasks simultaneously, or only the currently selected task, use the keys summarized in the table below. The step behavior for the main task and subtasks is as follows.
+要同时向前或向后移动所有创建的任务，或仅当前选择的任务，请使用下面表格中总结的按键。主任务和子任务的步骤行为如下所示。
 
-| **Action** | **Description** |
+| **动作** | **描述** |
 | :--------: | --------------- |
-| `[FWD]`/`[BWD]` key | Step forward/backward for all created tasks simultaneously |
-| `[CTRL]`+`[FWD]`/`[BWD]` key | Step forward/backward for the currently selected task only |
+| `[FWD]`/`[BWD]` 键 | 同时向前/向后移动所有创建的任务 |
+| `[CTRL]`+`[FWD]`/`[BWD]` 键 | 仅向前/向后移动当前选择的任务 |

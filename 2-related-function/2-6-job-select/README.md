@@ -1,2 +1,1 @@
-﻿# 2.6 Program select
-
+# 2.6 程序选择

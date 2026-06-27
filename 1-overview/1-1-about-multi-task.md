@@ -1,22 +1,22 @@
-﻿# 1.1 About the multi-tasking feature
+﻿# 1.1 关于多任务功能
 
-The ${cont_model} controller can run up to 8 programs (JOB files) simultaneously and independently. This independent operation mode is referred to as the **multi-tasking feature**.
+${cont_model} 控制器可以同时独立运行多达 8 个程序（JOB 文件）。这种独立操作模式称为 **多任务功能**。
 
-With multi-tasking, you can execute a robot control program while simultaneously running programs that control other devices. Robot control and other device control can operate independently, and when needed they can work in a synchronized state to cooperate. This enables performing complex and sophisticated application tasks.
+通过多任务，您可以在同时运行控制其他设备的程序时，执行机器人控制程序。机器人控制和其他设备控制可以独立运行，并在需要时可以以同步状态进行协作。这使得执行复杂和精密的应用任务成为可能。
 
-Figure 1-1 below shows a single-tasking structure. In this case only one task exists, so it is not possible to independently run two or more programs at the same time. Compared to the multi-tasking structure described later, you can think of this as having only the main task and no sub tasks.
+下图 1-1 显示了单任务结构。在这种情况下，仅存在一个任务，因此无法独立运行两个或更多程序。与后面描述的多任务结构相比，您可以将其视为只有主任务而没有子任务。
 
-![Figure 1-1 Single-tasking structure](<../_assets/image_1.png>)
+![图 1-1 单任务结构](<../_assets/image_1.png>)
 
-Figure 1-2 below shows a multi-tasking structure. Because up to 8 tasks can run concurrently, one program (JOB file) can be assigned per task, allowing up to 8 programs (JOB files) to run independently and simultaneously. Running 8 tasks concurrently allows independent control of multiple devices. However, robot control is limited to one robot per main task. To perform synchronized tasks using multiple robots simultaneously, please use our cooperative control system.
+下图 1-2 显示了多任务结构。因为最多可以同时运行 8 个任务，所以每个任务可以分配一个程序（JOB 文件），允许多达 8 个程序（JOB 文件）独立且同时运行。并发运行 8 个任务允许对多个设备的独立控制。然而，机器人控制每个主任务仅限于一个机器人。要使用多个机器人同时执行同步任务，请使用我们的协同控制系统。
 
-![Figure 1-2 Multi-tasking structure](<../_assets/image_2.png>)
+![图 1-2 多任务结构](<../_assets/image_2.png>)
 
-The names of the eight tasks that execute programs are as follows:
+执行程序的八个任务的名称如下：
 
-* Main task
-* Sub task 1 ~ 7
+* 主任务
+* 子任务 1 ~ 7
 
-The main task is always created and present by default to execute JOB programs. Sub tasks can be created and destroyed as needed. Figure 1-3 below shows the sub task creation structure. Sub tasks are created automatically when the program executes a `task start` statement. Sub tasks are destroyed automatically when a `task reset` statement is executed or when an `end` statement is executed in each sub task program.
+主任务始终默认创建并存在，以执行 JOB 程序。子任务可以根据需要创建和销毁。下图 1-3 显示了子任务创建结构。当程序执行 `task start` 语句时，子任务会自动创建。当执行 `task reset` 语句或在每个子任务程序中执行 `end` 语句时，子任务会自动销毁。
 
-![Figure 1-3 Sub task creation](<../_assets/image_3.png>)
+![图 1-3 子任务创建](<../_assets/image_3.png>)

@@ -11,22 +11,22 @@ task start,sub=<sub_task_number>,job=<program_number>
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">Item</th>
-      <th style="text-align:left">Description</th>
+      <th style="text-align:left">项目</th>
+      <th style="text-align:left">描述</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left">Sub task number</td>
-      <td style="text-align:left">Specify the sub task number to create (0 ~ 7).<br>(If set to 0, an unused task is selected automatically and used.)</td>
+      <td style="text-align:left">子任务编号</td>
+      <td style="text-align:left">指定要创建的子任务编号 (0 ~ 7)。<br>(如果设置为 0，将自动选择未使用的任务并使用。)</td>
     </tr>
     <tr>
-      <td style="text-align:left">Program number</td>
-      <td style="text-align:left">Specify the program to run in the created sub task (1 ~ 9999).</td>
+      <td style="text-align:left">程序编号</td>
+      <td style="text-align:left">指定在创建的子任务中运行的程序 (1 ~ 9999)。</td>
     </tr>
     <tr>
-      <td style="text-align:left">Usage examples</td>
-      <td style="text-align:left">task start,sub=1,job=11 (assign and run 0011.job on sub task 1)<br>task start,sub=0,job=11 (automatically select a sub task and run 0011.job)</td>
+      <td style="text-align:left">用法示例</td>
+      <td style="text-align:left">task start,sub=1,job=11 (在子任务 1 上分配并运行 0011.job)<br>task start,sub=0,job=11 (自动选择一个子任务并运行 0011.job)</td>
     </tr>
   </tbody>
 </table>
@@ -39,7 +39,7 @@ Note: The sub task number to be created must be a different sub task number than
 
 If you attempt to create a sub task with `task start` when that sub task is already created and running, assigning another program to that sub task will result in an error. See the example below.
 
-* <mark style="color:green;">`Error when assigning and starting another program on a running sub task`</mark>
+* <mark style="color:green;">`在运行中的子任务上分配和启动另一个程序时出错`</mark>
 
 ```
 task start,sub=1,job=11 # subtask 1 was started

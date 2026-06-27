@@ -1,1 +1,1 @@
-﻿# ${cont_model} Controller Manual - Multi-tasking
+﻿# ${cont_model} 控制器手册 - 多任务处理

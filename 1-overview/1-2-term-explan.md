@@ -1,11 +1,11 @@
-﻿# 1.2 Terminology
+﻿# 1.2 术语
 
-The terms used in this manual are defined in the table below.
+本手册中使用的术语在下表中定义。
 
-<mark style="color:green;">Table 1-1 Multitask terminology</mark>
+<mark style="color:green;">表 1-1 多任务术语</mark>
 
-| Term | Description |
+| 术语 | 描述 |
 | --- | --- |
-| Program (job file) | - A job program stored in the controller's non-volatile memory (e.g., 0001.job, 0002.job, 1001.job, etc.). |
-| Main task<br>Sub task 1 ~ 7 | -The robot controller's program executor that can load and run job programs.<br>-There are 8 tasks in total; each task can load and run only one program at a time. |
-| Main task program<br>Sub task program | -The specific job program assigned to a task.<br>(Example: If the main task loads 0001.job, the main task program is 0001.job.)<br>-A program can be executed only when it is assigned to either the main task or a sub task. |
+| 程序 (作业文件) | - 存储在控制器非易失性内存中的作业程序（例如，0001.job，0002.job，1001.job 等）。 |
+| 主任务<br>子任务 1 ~ 7 | - 机器人控制器的程序执行器，可以加载和运行作业程序。<br>- 总共有 8 个任务；每个任务一次只能加载和运行一个程序。 |
+| 主任务程序<br>子任务程序 | - 分配给任务的特定作业程序。<br>(示例：如果主任务加载 0001.job，则主任务程序为 0001.job。)<br>- 只有在分配给主任务或子任务时，程序才能被执行。 |

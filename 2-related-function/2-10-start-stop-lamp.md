@@ -1,8 +1,8 @@
-﻿# 2.10 Start/Stop lamp
+﻿# 2.10 启动/停止灯
 
-The operation status lamp (Start/Stop lamp) on the teach pendant indicates the state of task execution as shown in the table below.
+操作状态灯（启动/停止灯）在教学挂件上指示任务执行状态，如下表所示。
 
-| **Indicator** | **Meaning** |
+| **指示灯** | **含义** |
 | :------------: | ------------ |
-| Start lamp ON / Stop lamp OFF | At least one task is running |
-| Start lamp OFF / Stop lamp ON | All tasks are stopped |
+| 启动灯亮 / 停止灯熄灭 | 至少一个任务正在运行 |
+| 启动灯熄灭 / 停止灯亮 | 所有任务已停止 |

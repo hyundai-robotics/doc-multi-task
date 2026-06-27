@@ -1,5 +1,5 @@
-﻿# 2.9 Stop
+﻿# 2.9 停止
 
-If the `stop` button on the teach pendant is pressed or an external stop signal is input during multi-task operation, all tasks will stop.
+如果在教学挂件上按下 ` (stop)` 按钮或在多任务操作期间输入外部停止信号，则所有任务将停止。
 
-In addition, executing the `task stop` statement stops the corresponding subtask.
+此外，执行 `task stop` 语句将停止相应的子任务。

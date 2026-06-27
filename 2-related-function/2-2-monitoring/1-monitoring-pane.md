@@ -1,6 +1,5 @@
-﻿# 2.2.1 Monitoring pane
+# 2.2.1 监控面板
 
-From **Window Select** → **Multitasking**, you can view various statuses including the program number assigned to each task.
+从 **Window Select** → **Multitasking**，您可以查看包括分配给每个任务的程序编号在内的各种状态。
 
 ![Figure 2-4 Multitasking monitoring pane](<../../_assets/image_6.png>)
-

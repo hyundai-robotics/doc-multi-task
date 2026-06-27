@@ -1,1 +1,1 @@
-﻿# 2.4 Subtask destruction
+# 2.4 子任务破坏

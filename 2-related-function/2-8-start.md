@@ -1,3 +1,3 @@
-﻿# 2.8 Start
+﻿# 2.8 开始
 
-To start a task, in AUTO mode enable `MOTOR ON` and `START`, or in MANUAL mode enable `MOTOR ON` and press the `[FWD]` key. Alternatively, subtasks can be started by executing statements independently or by using external signals in conjunction with script commands.
+要开始任务，在自动模式下启用 `MOTOR ON` 和 `START`，或在手动模式下启用 `MOTOR ON` 并按下 `[FWD]` 键。或者，可以通过独立执行语句或结合脚本命令使用外部信号来启动子任务。

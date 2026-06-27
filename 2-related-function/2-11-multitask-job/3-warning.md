@@ -1,8 +1,8 @@
-﻿# 2.11.3 Warnings
+﻿# 2.11.3 警告
 
-When writing move statements in a program to be run as a subtask, note the following: 
+在作为子任务运行的程序中编写移动语句时，请注意以下事项：
 
-- Only axes that have performed axisctrl off in the move statement attribute should be designated with that mechanism.
-- Move statements must be executed exclusively to avoid overlapping mechanisms. 
-- It should be recorded as move P. When executed with L and C, the additional axis can move at full speed.
-- The speed unit must be recorded in % or sec. If recorded in mm/s, the recorded additional axis can operate at maximum speed.
+- 只有在移动语句属性中执行了 axisctrl off 的轴才能使用该机制进行指定。
+- 移动语句必须独占执行，以避免机制重叠。
+- 应记录为移动 P。与 L 和 C 一起执行时，额外的轴可以以全速移动。
+- 速度单位必须记录为 % 或 sec。如果记录为 mm/s，则记录的额外轴可以以最大速度运行。

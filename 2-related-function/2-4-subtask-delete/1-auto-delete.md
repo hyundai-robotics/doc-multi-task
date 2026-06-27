@@ -1,3 +1,3 @@
-﻿# 2.4.1 Automatic destruction
+﻿# 2.4.1 自动销毁
 
-When an `end` statement is executed in a subtask program, the subtask is automatically destroyed.
+当在子任务程序中执行 `end` 语句时，子任务会被自动销毁。

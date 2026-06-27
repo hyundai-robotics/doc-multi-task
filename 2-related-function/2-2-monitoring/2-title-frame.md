@@ -1,6 +1,6 @@
-﻿# 2.2.2 Title frame
+﻿# 2.2.2 标题框
 
-The execution status of the subtask and the selection status of the current task can be checked in the title frame. <br>
-Task switching can be done with the [CTRL]+[->] key or the [CTRL]+[<-] key, and you can change the currently selected task. For more details, see "[2.5 Task conversion](../2-5-task-conversion/1-robot-prog.md)". 
+子任务的执行状态和当前任务的选择状态可以在标题框中检查。 <br>
+可以使用 [CTRL]+[->] 键或 [CTRL]+[<-] 键进行任务切换，并且可以更改当前选定的任务。有关更多详细信息，请参见 "[2.5 任务转换](../2-5-task-conversion/1-robot-prog.md)"。
 
 ![](<../../_assets/image_8.png>)

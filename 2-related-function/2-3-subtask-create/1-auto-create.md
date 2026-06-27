@@ -1,3 +1,3 @@
-﻿# 2.3.1 Automatic creation
+﻿# 2.3.1 自动创建
 
-When a `task start` statement is executed within a maintask program or a subtask program, the specified program is assigned to the desired subtask and the subtask is created automatically.
+当在主任务程序或子任务程序中执行 `task start` 语句时，指定的程序会被分配到期望的子任务，并自动创建子任务。

@@ -1,9 +1,9 @@
-﻿# 2.6.2 Select from subtask
+﻿# 2.6.2 从子任务中选择
 
-When selecting a program in a subtask, only the program in that subtask is newly selected.
+在子任务中选择程序时，只有该子任务中的程序会被重新选择。
 
 
-|     **Task types**    |      **Action content**                                |
+|     **任务类型**    |      **操作内容**                                |
 | :-------------------: | --------------------------------------------------------- |
-|       Maintask        | No change                                                 |
-|       Subtask         | Change program number <br> Clear step and function number |
+|       主任务        | 无更改                                                 |
+|       子任务         | 更改程序编号 <br> 清除步骤和功能编号 |
